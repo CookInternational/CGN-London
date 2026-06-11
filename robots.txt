@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://london.cgnnews.net/sitemap.xml

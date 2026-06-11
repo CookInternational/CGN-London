@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07172f">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="cgn-language" content="en">
+  <meta name="cgn-api-base" content="https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec">
+
+  <title>CGN London | Local Bureau Team</title>
+  <meta name="description" content="Meet the CGN London bureau team covering the United Kingdom, Europe and global stories for CGN News readers.">
+  <link rel="canonical" href="https://london.cgnnews.net/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGN London">
+  <meta property="og:title" content="CGN London | Local Bureau Team">
+  <meta property="og:description" content="Meet the CGN London bureau team covering the United Kingdom, Europe and global stories for CGN News readers.">
+  <meta property="og:url" content="https://london.cgnnews.net/">
+  <meta property="og:image" content="https://london.cgnnews.net/assets/CGNWebBanner01.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://london.cgnnews.net/assets/CGNWebBanner01.png">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <style>
+    :root {
+      --cgn-ink: #111827;
+      --cgn-muted: #5d6675;
+      --cgn-line: #dfe4eb;
+      --cgn-paper: #ffffff;
+      --cgn-soft: #f5f7fa;
+      --cgn-navy: #07172f;
+      --cgn-gold: #b68a2e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cgn-soft);
+      color: var(--cgn-ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .bureau-page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 42px auto 64px;
+    }
+
+    .bureau-intro {
+      padding: 36px;
+      background:
+        linear-gradient(rgba(7, 23, 47, 0.82), rgba(7, 23, 47, 0.82)),
+        url("/assets/category/CGNLocal01.png") center center / cover no-repeat;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 18px 44px rgba(7, 23, 47, .16);
+    }
+
+    .bureau-kicker {
+      margin: 0 0 8px;
+      color: #f2d990;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .bureau-intro h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .bureau-intro h2 {
+      margin: 12px 0 0;
+      font-size: clamp(20px, 3vw, 30px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .bureau-intro p {
+      max-width: 800px;
+      margin: 18px 0 0;
+      color: #dbe4f2;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .team-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .team-member {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      padding: 28px;
+      background: var(--cgn-paper);
+      border: 1px solid var(--cgn-line);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(17, 24, 39, .06);
+    }
+
+    .team-member img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #e8ecf2;
+    }
+
+    .member-copy h2 {
+      margin: 0;
+      color: var(--cgn-navy);
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .member-role {
+      margin: 7px 0 0;
+      color: var(--cgn-gold);
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .member-beats {
+      margin: 18px 0 0;
+      padding: 11px 14px;
+      background: var(--cgn-soft);
+      border-left: 4px solid var(--cgn-gold);
+      color: var(--cgn-ink);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .member-bio {
+      margin: 18px 0 0;
+      color: #303846;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .member-email {
+      display: inline-flex;
+      margin-top: 20px;
+      color: var(--cgn-navy);
+      font-size: 15px;
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 2px solid var(--cgn-gold);
+      padding-bottom: 2px;
+    }
+
+    .member-email:hover,
+    .member-email:focus {
+      color: #000;
+    }
+
+
+    .language-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 20px 0 0;
+      padding: 14px;
+      background: rgba(255, 255, 255, .09);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 10px;
+    }
+
+    .language-box strong {
+      margin-right: 3px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .language-box button {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--cgn-navy);
+      padding: 7px 11px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .language-box button:hover,
+    .language-box button:focus-visible,
+    .language-box button.active {
+      border-color: #f2d990;
+      background: #f2d990;
+      color: #07172f;
+      outline: none;
+    }
+
+    #cgn-dynamic-translate-engine,
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+
+    @media (max-width: 760px) {
+      .bureau-page {
+        width: min(100% - 20px, 1180px);
+        margin-top: 20px;
+      }
+
+      .bureau-intro {
+        padding: 26px 22px;
+      }
+
+      .bureau-intro p {
+        font-size: 16px;
+      }
+
+      .team-member {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .team-member img {
+        width: min(100%, 360px);
+        margin: 0 auto;
+      }
+
+      .member-copy h2 {
+        font-size: 27px;
+      }
+    }
+  </style>
+
+  <script defer src="/assets/cgn-shell.js"></script>
+  <script defer src="/assets/js/cgn-bureau-v106.js"></script>
+</head>
+<body data-lang="en">
+  <div id="cgn-site-header"></div>
+
+  <main class="bureau-page" id="main-content">
+    <section class="bureau-intro" aria-labelledby="bureau-title">
+      <p class="bureau-kicker">CGN London</p>
+      <h1 id="bureau-title">Local Bureau Team</h1>
+      <p>The London bureau team covers the United Kingdom, Europe and global stories for CGN News readers.</p>
+
+      <div class="language-box" aria-label="Choose page language">
+        <strong>Language</strong>
+        <button type="button" data-cgn-language-link="en">English</button>
+        <button type="button" data-cgn-language-link="fr">Français</button>
+        <button type="button" data-cgn-language-link="es">Español</button>
+        <button type="button" data-cgn-language-link="de">Deutsch</button>
+        <button type="button" data-cgn-language-link="it">Italiano</button>
+        <button type="button" data-cgn-language-link="pt">Português</button>
+        <button type="button" data-cgn-language-link="pl">Polski</button>
+        <button type="button" data-cgn-language-link="ro">Română</button>
+        <button type="button" data-cgn-language-link="nl">Nederlands</button>
+        <button type="button" data-cgn-language-link="uk">Українська</button>
+      </div>
+    </section>
+
+    <section class="team-grid" aria-label="CGN London bureau staff">
+      <article class="team-member">
+        <img src="/assets/reporters/helena-price.png" alt="Helena Price">
+        <div class="member-copy">
+          <h2>Helena Price</h2>
+          <p class="member-role">London Bureau Chief</p>
+          <p class="member-beats"><strong>Beats:</strong> Europe, diplomacy, markets, energy, NATO, U.K. politics, transatlantic affairs</p>
+          <p class="member-bio">Helena Price is the London Bureau Chief for CGN News, directing coverage of Europe, diplomacy, markets, energy, NATO, U.K. politics and transatlantic affairs. Her work connects Westminster, Brussels, financial markets and international security debates to the practical consequences facing readers, businesses and governments. Price brings a composed foreign-affairs voice to stories involving alliances, trade, defense, sanctions, energy security and the political pressures shaping Europe.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/priya-ashford.png" alt="Priya Ashford">
+        <div class="member-copy">
+          <h2>Priya Ashford</h2>
+          <p class="member-role">Local/Civic Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Local / civic affairs</p>
+          <p class="member-bio">Born in Manchester and educated at King's College London, Priya Ashford grew up in a family that treated local council meetings, bus routes and school budgets as dinner-table news. She covers local and civic affairs for CGN London, with a close eye on city government, transport, public services and the everyday decisions that shape neighbourhood life. Priya reports in English and French, keeps a rescue terrier named Mabel, and is known in the bureau for mapping stories by walking the route first.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/thomas-hale.png" alt="Thomas Hale">
+        <div class="member-copy">
+          <h2>Thomas Hale</h2>
+          <p class="member-role">Politics Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Politics</p>
+          <p class="member-bio">Born in Bristol and educated at the University of Edinburgh, Thomas Hale came to politics reporting after volunteering on a student election desk and discovering that procedure often explains power. He covers government, elections, policy and public institutions for CGN London, connecting Westminster debates to the choices facing voters, families and businesses. Thomas reports in English and German, follows lower-league football, and keeps a battered notebook he calls Parliament Junior.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/charlotte-ward.png" alt="Charlotte Ward">
+        <div class="member-copy">
+          <h2>Charlotte Ward</h2>
+          <p class="member-role">Business &amp; Markets Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Business / markets</p>
+          <p class="member-bio">Born in London and educated at the London School of Economics, Charlotte Ward grew up above her parents' small shop and learned early how national policy can land first on local tills. She covers business, markets, trade and the consumer economy for CGN London, following the links between financial centres, supply chains, employers and household budgets. Charlotte reports in English and Portuguese, has a cat named Sterling, and makes a point of reading market reports with coffee strong enough to count as a second deadline.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/elliot-brooks.png" alt="Elliot Brooks">
+        <div class="member-copy">
+          <h2>Elliot Brooks</h2>
+          <p class="member-role">Technology Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Technology</p>
+          <p class="member-bio">Born in Leeds and educated at Imperial College London, Elliot Brooks started out building small websites for community groups before turning his attention to the rules and risks behind digital life. He covers technology, digital policy, cybersecurity and innovation for CGN London, with a focus on how platforms, data and emerging tools affect readers, businesses and public institutions. Elliot reports in English and Dutch, keeps tropical fish named Ada and Turing, and still tests new apps like a curious teenager with a reporter's notebook.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/maya-collins.png" alt="Maya Collins">
+        <div class="member-copy">
+          <h2>Maya Collins</h2>
+          <p class="member-role">Entertainment &amp; Culture Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Entertainment / culture</p>
+          <p class="member-bio">Born in Cardiff and educated at Goldsmiths, University of London, Maya Collins grew up around music venues, libraries and late-night film screenings that made culture feel like public life, not a luxury. She covers entertainment, arts, culture and media for CGN London, following the people and industries shaping what audiences watch, hear, read and argue about. Maya reports in English and Italian, has a spaniel named Bowie, and keeps a running list of the best theatre seats that do not ruin your rent budget.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/grace-whitmore.png" alt="Grace Whitmore">
+        <div class="member-copy">
+          <h2>Grace Whitmore</h2>
+          <p class="member-role">Meteorologist</p>
+          <p class="member-beats"><strong>Beats:</strong> Weather / climate impact</p>
+          <p class="member-bio">Born in Norwich and educated at the University of Reading, Grace Whitmore became interested in weather after childhood flood warnings turned forecasts into something her family planned around, not background noise. She covers weather, preparedness, climate impact and public safety for CGN London, translating forecasts, transport risks and severe-weather patterns into practical information for readers. Grace reports in English and Ukrainian, keeps a rabbit named Nimbus, and carries a tiny rain gauge in her work bag because the newsroom stopped being surprised.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/henry-shaw.png" alt="Henry Shaw">
+        <div class="member-copy">
+          <h2>Henry Shaw</h2>
+          <p class="member-role">Sports Desk</p>
+          <p class="member-beats"><strong>Beats:</strong> Sports</p>
+          <p class="member-bio">Born in Birmingham and educated at Loughborough University, Henry Shaw grew up around Saturday fixtures, crowded trains and the feeling that sport tells you as much about a place as its politics. He covers sports, fixtures, teams, athlete culture and fan experience for CGN London, following the results, rivalries, venues and communities that make the game matter. Henry reports in English and Spanish, has a Labrador named Wembley, and can usually identify a stadium from one blurry concourse photo.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <img src="/assets/reporters/nadia-clarke.png" alt="Nadia Clarke">
+        <div class="member-copy">
+          <h2>Nadia Clarke</h2>
+          <p class="member-role">Investigations &amp; Special Reports Reporter</p>
+          <p class="member-beats"><strong>Beats:</strong> Investigations / special reports</p>
+          <p class="member-bio">Born in Warsaw and educated at University College London, Nadia Clarke came to investigations after translating public documents for community groups and seeing how hard accountability can be to reach. She covers public records, accountability and special reports for CGN London, focusing on institutions, spending, governance failures and stories that require patience with evidence. Nadia reports in English and Polish, keeps a black cat named Ledger, and is the reporter most likely to ask for the original document before anyone finishes the sentence.</p>
+          <a class="member-email" href="mailto:london@cgnnews.net">london@cgnnews.net</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="cgn-site-footer"></div>
+</body>
+</html>
