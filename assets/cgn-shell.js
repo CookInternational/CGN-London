@@ -992,14 +992,14 @@ function getShellLoginInput_(id){
             <a href="https://www.cgnnews.net/category/business">Business</a><br>
             <a href="https://www.cgnnews.net/category/markets">Markets</a><br>
             <a href="https://www.cgnnews.net/category/technology">Technology</a><br>
-            <a href="https://www.cgnnews.net/investigations">Investigations</a><br>
+            <a href="https://www.cgnnews.net/category/investigations">Investigations</a><br>
             <a href="https://www.cgnnews.net/weather">Weather</a><br>
             <a href="https://www.cgnnews.net/category/religion-and-spirituality">Religion & Spirituality</a>
           </div>
 
           <div class="footer-link-column">
             <h4><a href="https://www.cgnnews.net/reporters">Reporters</a></h4>
-            <a href="https://www.cgnnews.net/special-reports">Special Reports</a><br>
+            <a href="https://www.cgnnews.net/category/special-reports">Special Reports</a><br>
             <a href="https://www.cgnnews.net/category/entertainment">Entertainment</a><br>
             <a href="https://www.cgnnews.net/category/environment">Environment</a><br>
             <a href="https://www.cgnnews.net/category/energy">Energy</a><br>
