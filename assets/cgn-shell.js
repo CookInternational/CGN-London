@@ -23,6 +23,14 @@
 
   const CGN_API_BASE = getConfiguredApiBase_();
   const CGN_ARTICLES_URL = CGN_API_BASE + "?action=articles";
+  const CGN_MAIN_SITE_URL = "https://www.cgnnews.net";
+
+  function cgnMainSiteUrl_(value){
+    const raw = String(value || "").trim();
+    if(!raw) return CGN_MAIN_SITE_URL + "/";
+    if(/^(?:https?:|mailto:|tel:|#)/i.test(raw)) return raw;
+    return CGN_MAIN_SITE_URL + (raw.startsWith("/") ? raw : "/" + raw);
+  }
 
   window.CGN_API_BASE = CGN_API_BASE;
   window.CGN_API_URL = CGN_API_BASE;
@@ -216,7 +224,7 @@ function getShellLoginInput_(id){
         </div>
 
         <p class="cgn-shell-login-reset">
-          <a href="/reset-password/">Forgot Password?</a>
+          <a href="https://www.cgnnews.net/reset-password/">Forgot Password?</a>
         </p>
 
         <button type="button" class="cgn-shell-login-close" onclick="closeLogin()">Close</button>
@@ -696,7 +704,8 @@ function getShellLoginInput_(id){
 
     if(existingUrl){
       if(existingUrl.startsWith("http")) return existingUrl;
-      return existingUrl.endsWith("/") ? existingUrl : existingUrl + "/";
+      const mainPath = existingUrl.startsWith("/") ? existingUrl : "/" + existingUrl;
+      return cgnMainSiteUrl_(mainPath.endsWith("/") ? mainPath : mainPath + "/");
     }
 
     const slug = String(article && article.slug || "").trim() || slugify(article && article.title || "cgn-news-update");
@@ -707,7 +716,7 @@ function getShellLoginInput_(id){
     const month = String(date.getUTCMonth() + 1).padStart(2, "0");
     const day = String(date.getUTCDate()).padStart(2, "0");
 
-    return `/news/${year}/${month}/${day}/${slug}/`;
+    return cgnMainSiteUrl_(`/news/${year}/${month}/${day}/${slug}/`);
   }
 
   function startShellHeadlineTicker(articles){
@@ -717,7 +726,7 @@ function getShellLoginInput_(id){
     const tickerArticles = Array.isArray(articles) ? sortNewestFirst(articles) : [];
 
     if(!tickerArticles.length){
-      ticker.innerHTML = `<a href="/news">BREAKING: CGN News</a>`;
+      ticker.innerHTML = `<a href="https://www.cgnnews.net/news">BREAKING: CGN News</a>`;
       return;
     }
 
@@ -746,7 +755,7 @@ function getShellLoginInput_(id){
       const data = await res.json();
       startShellHeadlineTicker(Array.isArray(data) ? data : []);
     } catch(e){
-      ticker.innerHTML = `<a href="/news">BREAKING: CGN News</a>`;
+      ticker.innerHTML = `<a href="https://www.cgnnews.net/news">BREAKING: CGN News</a>`;
     }
   }
 
@@ -758,7 +767,7 @@ function getShellLoginInput_(id){
   function editorPenHtml(){
     if(!shouldShowEditorPen()) return "";
     return `
-      <a href="/editor" class="editor-portal-link" aria-label="Open CGN Editor Portal">
+      <a href="https://www.cgnnews.net/editor" class="editor-portal-link" aria-label="Open CGN Editor Portal">
         <span class="editor-portal-pen" aria-hidden="true"></span>
         <span class="editor-portal-text">EDITOR LOGIN</span>
       </a>
@@ -767,7 +776,7 @@ function getShellLoginInput_(id){
 
   function supportHelpHtml(){
     return `
-      <a href="/support/" class="cgn-help-link" aria-label="Open CGN Technical Support">
+      <a href="https://www.cgnnews.net/support/" class="cgn-help-link" aria-label="Open CGN Technical Support">
         <span class="cgn-help-mark" aria-hidden="true">?</span>
         <span class="cgn-help-text">Help?</span>
       </a>
@@ -781,29 +790,29 @@ function getShellLoginInput_(id){
     mount.innerHTML = `
       <header class="top-bar">
 
-        <a href="/" class="brand-link" aria-label="CGN News homepage">
+        <a href="https://www.cgnnews.net/" class="brand-link" aria-label="CGN News homepage">
           <img src="/CGNNewsLogo01.png" class="logo" alt="CGN News">
           <span class="network-name">Cook Global News Network</span>
         </a>
 
         <nav class="nav" aria-label="Main Navigation">
-          <a href="/category/world">World</a>
-          <a href="/category/politics">Politics</a>
-          <a href="/category/business">Business</a>
-          <a href="/category/markets">Markets</a>
-          <a href="/category/technology">Technology</a>
+          <a href="https://www.cgnnews.net/category/world">World</a>
+          <a href="https://www.cgnnews.net/category/politics">Politics</a>
+          <a href="https://www.cgnnews.net/category/business">Business</a>
+          <a href="https://www.cgnnews.net/category/markets">Markets</a>
+          <a href="https://www.cgnnews.net/category/technology">Technology</a>
           <span class="nav-more">
             <button class="nav-more-button" type="button" aria-label="More CGN News categories" aria-haspopup="true">▾</button>
             <span id="category-dropdown" class="nav-dropdown" role="menu">
-              <a href="/category/entertainment">Entertainment</a>
-              <a href="/category/environment">Environment</a>
-              <a href="/category/energy">Energy</a>
-              <a href="/category/opinion">Opinion</a>
-              <a href="/category/local">Local</a>
-              <a href="/category/investigations">Investigations</a>
-              <a href="/category/special-reports">Special Reports</a>
-              <a href="/category/religion-and-spirituality/">Religion &amp; Spirituality</a>
-              <a href="/news/">View All News</a>
+              <a href="https://www.cgnnews.net/category/entertainment">Entertainment</a>
+              <a href="https://www.cgnnews.net/category/environment">Environment</a>
+              <a href="https://www.cgnnews.net/category/energy">Energy</a>
+              <a href="https://www.cgnnews.net/category/opinion">Opinion</a>
+              <a href="https://www.cgnnews.net/category/local">Local</a>
+              <a href="https://www.cgnnews.net/category/investigations">Investigations</a>
+              <a href="https://www.cgnnews.net/category/special-reports">Special Reports</a>
+              <a href="https://www.cgnnews.net/category/religion-and-spirituality/">Religion &amp; Spirituality</a>
+              <a href="https://www.cgnnews.net/news/">View All News</a>
             </span>
           </span>
         </nav>
@@ -813,12 +822,12 @@ function getShellLoginInput_(id){
           <span class="account-wrap">
             <a href="#" id="account-btn">Login</a>
             <span id="account-menu" class="account-menu" aria-label="Account menu">
-              <a href="/account">Account</a>
+              <a href="https://www.cgnnews.net/account">Account</a>
               <button type="button" id="account-logout-btn">Logout</button>
             </span>
           </span>
 
-          <a id="cgn-bureau-weather-time" class="cgn-bureau-weather-time" href="/weather/" aria-label="Open CGN Weather">
+          <a id="cgn-bureau-weather-time" class="cgn-bureau-weather-time" href="https://www.cgnnews.net/weather/" aria-label="Open CGN Weather">
             <span id="cgn-bureau-mobile-line" class="cgn-bureau-mobile-line"><span class="cgn-bureau-mobile-date">Loading date...</span><span class="cgn-bureau-mobile-clock">Loading time...</span><span class="cgn-bureau-mobile-city">Indianapolis</span></span>
             <span id="cgn-bureau-time" class="cgn-bureau-time">Loading local time...</span>
             <span id="cgn-bureau-weather" class="cgn-bureau-weather">🌤 Loading weather...</span>
@@ -827,11 +836,11 @@ function getShellLoginInput_(id){
           <span id="datetime" class="cgn-shell-compat-hidden" aria-hidden="true"></span>
           <span id="weather" class="cgn-shell-compat-hidden" aria-hidden="true"></span>
 
-          <a id="cgn-mobile-weather-mini" class="cgn-mobile-weather-mini" href="/weather/" aria-label="Open CGN Weather">
+          <a id="cgn-mobile-weather-mini" class="cgn-mobile-weather-mini" href="https://www.cgnnews.net/weather/" aria-label="Open CGN Weather">
             <span id="cgn-mobile-weather-compact" class="cgn-mobile-weather-compact">🌤 --°F</span>
           </a>
 
-          <a id="news-directory-link" class="news-directory-link" href="/news" aria-label="CGN News directory">
+          <a id="news-directory-link" class="news-directory-link" href="https://www.cgnnews.net/news" aria-label="CGN News directory">
             <span class="news-directory-icon" aria-hidden="true">
               <span class="news-directory-word">NEWS</span>
               <span class="news-directory-paper">
@@ -843,7 +852,7 @@ function getShellLoginInput_(id){
             </span>
           </a>
 
-          <a id="sports-center-link" class="sports-center-link" href="/sports" aria-label="CGN Sports Center">
+          <a id="sports-center-link" class="sports-center-link" href="https://www.cgnnews.net/sports" aria-label="CGN Sports Center">
             <img src="/CGNSportsCenterIcon01.png" class="sports-center-icon" alt="">
             <span class="sports-center-text">Sports</span>
           </a>
@@ -874,10 +883,10 @@ function getShellLoginInput_(id){
 
       </header>
 
-      <div class="ticker" id="cgn-shell-ticker"><a href="/news">Loading headlines...</a></div>
+      <div class="ticker" id="cgn-shell-ticker"><a href="https://www.cgnnews.net/news">Loading headlines...</a></div>
 
       <section class="market-ticker-wrap" aria-label="CGN Market Watch live stock ticker">
-        <a class="market-ticker-click" href="/category/markets/market-watch/" aria-label="Open CGN Market Watch">Open CGN Market Watch</a>
+        <a class="market-ticker-click" href="https://www.cgnnews.net/category/markets/market-watch/" aria-label="Open CGN Market Watch">Open CGN Market Watch</a>
         <div class="market-ticker-live">
           <span class="market-ticker-label">Market Watch</span>
           <div class="market-tv-ticker cgn-shell-market-tv" aria-hidden="true">
@@ -972,48 +981,48 @@ function getShellLoginInput_(id){
         <div class="footer-container">
 
           <div>
-            <a href="/"><img src="/CGNNewsLogo01.png" class="footer-logo" alt="CGN News"></a>
+            <a href="https://www.cgnnews.net/"><img src="/CGNNewsLogo01.png" class="footer-logo" alt="CGN News"></a>
             <p>Real-Time News.<br>Global Perspective.</p>
           </div>
 
           <div>
-            <h4><a href="/news">News</a></h4>
-            <a href="/category/world">World</a><br>
-            <a href="/category/politics">Politics</a><br>
-            <a href="/category/business">Business</a><br>
-            <a href="/category/markets">Markets</a><br>
-            <a href="/category/technology">Technology</a><br>
-            <a href="/investigations">Investigations</a><br>
-            <a href="/weather">Weather</a><br>
-            <a href="/category/religion-and-spirituality">Religion & Spirituality</a>
+            <h4><a href="https://www.cgnnews.net/news">News</a></h4>
+            <a href="https://www.cgnnews.net/category/world">World</a><br>
+            <a href="https://www.cgnnews.net/category/politics">Politics</a><br>
+            <a href="https://www.cgnnews.net/category/business">Business</a><br>
+            <a href="https://www.cgnnews.net/category/markets">Markets</a><br>
+            <a href="https://www.cgnnews.net/category/technology">Technology</a><br>
+            <a href="https://www.cgnnews.net/investigations">Investigations</a><br>
+            <a href="https://www.cgnnews.net/weather">Weather</a><br>
+            <a href="https://www.cgnnews.net/category/religion-and-spirituality">Religion & Spirituality</a>
           </div>
 
           <div class="footer-link-column">
-            <h4><a href="/reporters">Reporters</a></h4>
-            <a href="/special-reports">Special Reports</a><br>
-            <a href="/category/entertainment">Entertainment</a><br>
-            <a href="/category/environment">Environment</a><br>
-            <a href="/category/energy">Energy</a><br>
-            <a href="/category/opinion">Opinion</a><br>
-            <a href="/category/local">Local</a><br>
-            <a href="/sports">Sports</a><br>
-            <a href="/archives" class="footer-legal-archives">Archives</a>
+            <h4><a href="https://www.cgnnews.net/reporters">Reporters</a></h4>
+            <a href="https://www.cgnnews.net/special-reports">Special Reports</a><br>
+            <a href="https://www.cgnnews.net/category/entertainment">Entertainment</a><br>
+            <a href="https://www.cgnnews.net/category/environment">Environment</a><br>
+            <a href="https://www.cgnnews.net/category/energy">Energy</a><br>
+            <a href="https://www.cgnnews.net/category/opinion">Opinion</a><br>
+            <a href="https://www.cgnnews.net/category/local">Local</a><br>
+            <a href="https://www.cgnnews.net/sports">Sports</a><br>
+            <a href="https://www.cgnnews.net/archives" class="footer-legal-archives">Archives</a>
           </div>
 
           <div class="footer-legal-links">
-            <h4><a href="/editorial-standards">Editorial Standards</a></h4>
-            <a href="/about">About Us</a><br>
-            <a href="/contact">Contact Us</a><br>
-            <a href="/terms-of-service">Terms of Service</a><br>
-            <a href="/privacy-policy">Privacy Policy</a><br>
+            <h4><a href="https://www.cgnnews.net/editorial-standards">Editorial Standards</a></h4>
+            <a href="https://www.cgnnews.net/about">About Us</a><br>
+            <a href="https://www.cgnnews.net/contact">Contact Us</a><br>
+            <a href="https://www.cgnnews.net/terms-of-service">Terms of Service</a><br>
+            <a href="https://www.cgnnews.net/privacy-policy">Privacy Policy</a><br>
             <a href="mailto:tips@cgnnews.net?subject=RE%3A%20Tip">Submit a Tip</a><br>
-            <a href="/write-for-us">Write For Us</a><br>
-            <a href="/advertise">Advertise With Us</a><br>
-            <a href="/copyright">Copyright</a><br>
+            <a href="https://www.cgnnews.net/write-for-us">Write For Us</a><br>
+            <a href="https://www.cgnnews.net/advertise">Advertise With Us</a><br>
+            <a href="https://www.cgnnews.net/copyright">Copyright</a><br>
           </div>
 
           <div class="footer-bureau">
-            <h4><a href="/bureaus">Bureaus</a></h4>
+            <h4><a href="https://www.cgnnews.net/bureaus">Bureaus</a></h4>
             <p class="footer-bureau-name">Cook Global News Network</p>
             <p>151 N. Delaware Street<br>Suite 122<br>Indianapolis, IN 46204</p>
             <p><a href="mailto:tips@cgnnews.net">tips@cgnnews.net</a><br>+1 (317) 442-1437</p>
@@ -1023,7 +1032,7 @@ function getShellLoginInput_(id){
         </div>
 
         <div class="footer-eo-block" aria-label="Equal Opportunity Employer notice">
-          <p class="footer-eo-title"><a href="/equal-opportunity/">EQUAL OPPORTUNITY EMPLOYER</a></p>
+          <p class="footer-eo-title"><a href="https://www.cgnnews.net/equal-opportunity/">EQUAL OPPORTUNITY EMPLOYER</a></p>
           <div class="footer-eo-copy">
             <p class="footer-eo-policy">CGN News is an equal opportunity employer, and does not discriminate on the basis of race, sex, religion, color, national origin, gender identity, pregnancy status, disability status, veteran status or any other protected category as defined by law, and in accordance with the Civil Rights Act of 1964, as amended, Americans with Disabilities Act of 1990, as amended, the Vietnam Era Veterans’ Readjustment Assistance Act of 1974, as amended, Uniformed Services Employment &amp; Reemployment Rights Act of 1994, as amended, and the Rehabilitation Act of 1973, as amended.</p>
             <p class="footer-eo-reporting">If you believe you have experienced discrimination in the employment process, you may contact the Equal Employment Opportunity Commission by visiting <a href="https://www.eeoc.gov" target="_blank" rel="noopener">www.eeoc.gov</a> or by mail at: 131 M Street, NE, Washington, D.C., 20507 or, for IN, KY, and MI applicants and employees: 115 W. Washington Street, South Tower, Suite 600, Indianapolis, IN 46204.</p>
@@ -1032,11 +1041,11 @@ function getShellLoginInput_(id){
         </div>
 
         <div class="footer-utility-links">
-          <p><a href="/unsubscribe">Unsubscribe From Newsletter</a></p>
+          <p><a href="https://www.cgnnews.net/unsubscribe">Unsubscribe From Newsletter</a></p>
         </div>
 
         <div class="footer-bottom">
-          <a href="/copyright">Copyright © 2026 | CGN News — All Rights Reserved</a>
+          <a href="https://www.cgnnews.net/copyright">Copyright © 2026 | CGN News — All Rights Reserved</a>
         </div>
 
       </footer>
