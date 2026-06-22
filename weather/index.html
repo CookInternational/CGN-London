@@ -875,7 +875,13 @@ function getArticleTime(article){
 function buildWeatherArticleUrl(article){
   const existingUrl = String(article.url || article.canonical_url || article.canonicalUrl || "").trim();
   if(existingUrl){
-    return existingUrl;
+    let pathOnly = existingUrl.replace(/^https?:\/\/[^/]+/i,"");
+    if(pathOnly && pathOnly.indexOf("/") !== 0) pathOnly = "/" + pathOnly;
+    if(/^\/(news|weather|sports)\//i.test(pathOnly)){
+      if(pathOnly.indexOf("/news/") === 0) pathOnly = pathOnly.replace(/^\/news\//, "/weather/");
+      return "https://www.cgnnews.net" + pathOnly.replace(/\/index\.html$/i,"/");
+    }
+    if(/^https?:\/\//i.test(existingUrl)) return existingUrl;
   }
   const slug = slugify(article.slug || article.title || "weekly-weather-brief");
   const time = getArticleTime(article);
@@ -970,7 +976,7 @@ const WEATHER_CGN_LIVE_FEEDS = {
     embed:"https://www.cgnnews.net/weather/weekly-weather-brief/?embed=1&muted=1",
     sourceUrl:"https://www.cgnnews.net/weather/weekly-weather-brief/",
     directoryUrl:"https://www.cgnnews.net/weather/weekly-weather-brief/",
-    coverageUrl:`/${LANG}/weather/`,
+    coverageUrl:"/weather/",
     fallbackImage:"/assets/CGNWeatherBrief01.png",
     fallbackTitle:"CGN Weekly Weather Brief",
     fallbackText:"Open the CGN Weekly Weather Brief directly if the embedded player is unavailable."
@@ -1031,6 +1037,42 @@ function scheduleMidnightWeatherRefresh(){
   },Math.max(1000,nextMidnight.getTime() - now.getTime()));
 }
 scheduleMidnightWeatherRefresh();
+
+function normalizeLondonPageCategoryLinks(){
+  const main = "https://www.cgnnews.net";
+  const london = "https://london.cgnnews.net/";
+
+  document.querySelectorAll("a[href]").forEach(function(link){
+    const href = String(link.getAttribute("href") || "").trim();
+    const label = String(link.textContent || link.getAttribute("aria-label") || "").trim().toLowerCase();
+
+    if(/^\/en\/weather\/?$/i.test(href)) link.setAttribute("href", "/weather/");
+    if(/^\/en\/sports\/?$/i.test(href)) link.setAttribute("href", "/sports/");
+    if(/^\/en\/?$/i.test(href) && /home|london/i.test(label)) link.setAttribute("href", "/");
+
+    if(/\/category\/london\/?$/i.test(href) || label === "london" || label === "cgn london"){
+      link.setAttribute("href", london);
+      return;
+    }
+
+    const match = href.match(/^(?:https?:\/\/london\.cgnnews\.net)?(?:\/en)?\/category\/([^/?#]+)\/?/i);
+    if(match){
+      link.setAttribute("href", main + "/category/" + match[1].toLowerCase() + "/");
+    }
+  });
+}
+
+function scheduleLondonPageLinkNormalization(){
+  normalizeLondonPageCategoryLinks();
+  setTimeout(normalizeLondonPageCategoryLinks, 300);
+  setTimeout(normalizeLondonPageCategoryLinks, 1200);
+}
+if(document.readyState === "loading"){
+  document.addEventListener("DOMContentLoaded", scheduleLondonPageLinkNormalization);
+} else {
+  scheduleLondonPageLinkNormalization();
+}
+
 </script>
 <script defer="" src="/assets/js/cgn-bureau-v106.js"></script>
 </body>
