@@ -804,6 +804,93 @@
       .london-latest-list{max-height:300px;}
     }
 
+
+    /* CGN London LIVE v4 — full-width feature image and compact preview stack */
+    .london-live-feature{
+      display:block;
+      min-height:0;
+      overflow:hidden;
+    }
+    .london-live-feature-media{
+      width:100%;
+      height:auto;
+      min-height:0;
+      aspect-ratio:16 / 9;
+      max-height:350px;
+      border-bottom:1px solid rgba(255,255,255,.16);
+      background:#050b14;
+    }
+    .london-live-feature-media img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+      opacity:.98;
+      transform:none;
+      filter:saturate(1.05) contrast(1.04);
+    }
+    .london-live-feature-content{
+      min-height:252px;
+      padding:20px 22px 18px;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .london-live-feature-title{
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      max-width:780px;
+      font-size:clamp(28px,3.9vw,44px);
+    }
+    .london-live-feature-copy{
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      max-width:760px;
+      margin-top:12px;
+      font-size:15.5px;
+      line-height:1.55;
+    }
+    .london-live-feature-statline{
+      margin-top:14px;
+    }
+    .london-feature-rotation-controls{
+      margin-top:14px;
+      padding-top:12px;
+    }
+    .london-live-feature-content > div:last-child .london-live-actions{
+      margin-top:14px;
+    }
+    @media(max-width:980px){
+      .london-live-feature-media{
+        max-height:none;
+      }
+      .london-live-feature-content{
+        min-height:0;
+      }
+    }
+    @media(max-width:760px){
+      .london-live-feature-media{
+        height:auto;
+        min-height:0;
+        aspect-ratio:16 / 9;
+      }
+      .london-live-feature-content{
+        padding:17px;
+      }
+      .london-live-feature-title{
+        font-size:26px;
+        -webkit-line-clamp:4;
+      }
+      .london-live-feature-copy{
+        -webkit-line-clamp:4;
+      }
+    }
+
   </style>
 
   <script defer src="/assets/cgn-shell.js"></script>
@@ -838,7 +925,7 @@
         <div>
           <p class="london-live-kicker">Live Bureau Desk</p>
           <h2 id="london-live-title" class="london-live-title">CGN LIVE London</h2>
-          <p class="london-live-copy">London-dateline CGN reporting covering London & Europe.</p>
+          <p class="london-live-copy">London-dateline CGN reporting from the Articles sheet, metric London weather, and local sports links in one broadcast-style dashboard.</p>
         </div>
         <div class="london-live-actions" aria-label="Primary London live actions">
           <a class="london-live-btn" href="/">Latest News</a>
@@ -857,11 +944,11 @@
             </div>
           </div>
           <div class="london-live-feature-content">
-            <div class="london-live-feature-meta">London · Last 72 Hours</div>
-            <h3 class="london-live-feature-title">Checking Articles</h3>
-            <p class="london-live-feature-copy">Looking for recent London Articles.</p>
+            <div class="london-live-feature-meta">London Dateline · Last 72 Hours</div>
+            <h3 class="london-live-feature-title">Checking the Articles sheet</h3>
+            <p class="london-live-feature-copy">Looking for recent LONDON-dateline articles from the Articles sheet.</p>
             <div class="london-live-feature-statline">
-              <span>London</span><span>London</span><span>Story Rotation</span>
+              <span>Articles Sheet</span><span>London Dateline</span><span>Story Rotation</span>
             </div>
             <div class="london-live-actions">
               <a class="london-live-btn" href="/">Latest News</a>
@@ -1044,20 +1131,20 @@
       const url=safeHref(buildArticleUrl(article));
       const image=articleImage(article);
       const labelText=safeText(label||"London Live Story");
-      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="${image}" alt="" loading="lazy" onerror="this.src='/assets/CGNWebBanner01.png';"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">${labelText} · ${category} · ${date}</div><h3 class="london-live-feature-title">${title}</h3><p class="london-live-feature-copy">${copy}</p><div class="london-live-feature-statline"><span>London</span><span>Dateline</span><span>${category}</span></div></div><div><div class="london-live-actions"><a class="london-live-btn" href="${url}">Read Article</a><a class="london-live-btn secondary" href="/weather/">London Weather</a><a class="london-live-btn secondary" href="/sports/">London Sports</a></div><div class="london-feature-rotation-controls" aria-label="London story rotation controls"><div class="london-feature-control-row"><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(-1)">Previous</button><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(1)">Next</button></div><div class="london-feature-counter">Story ${current} of ${total}</div><div class="london-feature-progress" aria-hidden="true"><span></span></div></div></div></div>`;
+      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="${image}" alt="" loading="lazy" onerror="this.src='/assets/CGNWebBanner01.png';"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">${labelText} · ${category} · ${date}</div><h3 class="london-live-feature-title">${title}</h3><p class="london-live-feature-copy">${copy}</p><div class="london-live-feature-statline"><span>Articles Sheet</span><span>London Dateline</span><span>${category}</span></div></div><div><div class="london-live-actions"><a class="london-live-btn" href="${url}">Read Article</a><a class="london-live-btn secondary" href="/weather/">London Weather</a><a class="london-live-btn secondary" href="/sports/">London Sports</a></div><div class="london-feature-rotation-controls" aria-label="London story rotation controls"><div class="london-feature-control-row"><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(-1)">Previous</button><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(1)">Next</button></div><div class="london-feature-counter">Story ${current} of ${total}</div><div class="london-feature-progress" aria-hidden="true"><span></span></div></div></div></div>`;
     }
 
     function renderFeatureFallback(message){
       const mount=document.getElementById("london-live-feature");
       if(!mount)return;
-      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="/assets/CGNWebBanner01.png" alt="" loading="lazy"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">Latest from CGN Articles</div><h3 class="london-live-feature-title">London coverage is loading</h3><p class="london-live-feature-copy">${safeText(message||"No London-dateline articles from the past 72 hours are available right now.")}</p><div class="london-live-feature-statline"><span>72-Hour London Filter</span><span>London</span></div></div><div class="london-live-actions"><a class="london-live-btn" href="/">Latest News</a><a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a></div></div>`;
+      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="/assets/CGNWebBanner01.png" alt="" loading="lazy"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">Latest from CGN Articles</div><h3 class="london-live-feature-title">London coverage is loading</h3><p class="london-live-feature-copy">${safeText(message||"No London-dateline articles from the past 72 hours are available right now.")}</p><div class="london-live-feature-statline"><span>72-Hour London Filter</span><span>Articles Sheet</span></div></div><div class="london-live-actions"><a class="london-live-btn" href="/">Latest News</a><a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a></div></div>`;
     }
 
     function renderLatestList(items){
       const mount=document.getElementById("london-latest-list");
       if(!mount)return;
       if(!items.length){
-        mount.innerHTML='<p class="london-status">No London Articles from the past 72 hours are available right now.</p>';
+        mount.innerHTML='<p class="london-status">No London-dateline articles from the past 72 hours are available right now.</p>';
         return;
       }
       mount.innerHTML=items.slice(0,12).map(function(article){
@@ -1089,7 +1176,7 @@
       londonLiveStories=Array.isArray(items)?items.filter(Boolean):[];
       londonLiveIndex=0;
       if(!londonLiveStories.length){
-        renderFeatureFallback("No London Articles from the past 72 hours are available right now.");
+        renderFeatureFallback("No London-dateline articles from the past 72 hours are available right now.");
         renderLatestList([]);
         return;
       }
