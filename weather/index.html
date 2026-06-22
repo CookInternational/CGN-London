@@ -10,17 +10,6 @@
 <meta content="index, follow, max-image-preview:large" name="robots"/>
 <meta content="CGN London" name="author"/>
 <link href="https://london.cgnnews.net/weather/" rel="canonical"/>
-
-
-
-
-
-
-
-
-
-
-
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
 <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
@@ -362,7 +351,7 @@ body{background:var(--weather-bg);}
 <section aria-label="Current London weather conditions" class="current-weather weather-clear">
 <div aria-hidden="true" class="weather-effects" id="weatherEffects"></div>
 <div class="weather-content">
-<h2 id="locationTitle">London, United Kingdom</h2>
+<h2 id="locationTitle">London, England</h2>
 <div class="current-weather-main">
 <div class="icon-main" id="weatherIcon"></div>
 <div>
@@ -439,11 +428,11 @@ Weather data is provided for informational purposes and may update throughout th
 </section>
 <section aria-labelledby="weather-articles-title" class="weather-articles-section">
 <div class="section-title">
-<h2 id="weather-articles-title">London Weather News</h2>
-<span>Latest CGN London weather reporting</span>
+<h2 id="weather-articles-title">Latest Weekly Weather Briefs</h2>
+<span>5 most recent CGN Weekly Weather Briefs from the Articles sheet</span>
 </div>
 <div class="weather-articles-grid" id="weatherArticles">
-<div class="weather-articles-empty">Loading London weather articles...</div>
+<div class="weather-articles-empty">Loading the latest CGN Weekly Weather Briefs...</div>
 </div>
 </section>
 </main>
@@ -453,12 +442,12 @@ Weather data is provided for informational purposes and may update throughout th
 const CGN_API_BASE = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
 const BUREAU = "london";
 const LANG = "en";
-const PAGE = {"html_lang": "en-GB", "title": "London Weather | CGN London", "description": "London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London.", "kicker": "CGN London Weather", "hero_title": "London Weather Center", "hero_text": "Live London conditions, hourly forecast, extended outlook, rain and wind updates, and CGN Weekly Weather Brief coverage using metric measurements for London readers.", "radar": "Weather Radar", "radar_small": "Open London weather warnings, rain tracking, flood alerts, and weather tools.", "weekly": "Weekly Weather Forecast", "weekly_small": "Watch the latest CGN Weekly Weather Brief for London and UK conditions.", "search": "Search city or place", "default_label": "London, United Kingdom", "next12": "Next 12 Hours", "next12_sub": "Starts at the current London forecast hour", "extended": "Extended Forecast", "weather_note": "Weather data is provided for informational purposes and may update throughout the day. Forecasts should be checked regularly during heavy rain, high wind, heat, flooding risk, poor visibility, rail disruption, aviation delays, or severe weather.", "live_span": "Weather and weekly forecast source panel", "live_title": "CGN London Weather Center", "live_sub": "This player loads only the CGN Weekly Weather Brief from the main CGN Weather Center.", "open_weekly": "Open Weekly Weather Brief", "radar_btn": "Radar", "weather_btn": "Weather", "sports_btn": "Sports", "now_showing": "Now showing:", "news_title": "London Weather News", "news_sub": "Latest CGN London weather reporting", "loading_articles": "Loading London weather articles...", "no_articles": "No London weather articles are available right now.", "articles_unavailable": "London weather articles are temporarily unavailable.", "data_unavailable": "Weather data is temporarily unavailable. Please try another location or refresh the page.", "connection_error": "Weather data is temporarily unavailable. Please check your connection and try again.", "forecast_label_suffix": "-day outlook", "today": "Today", "high": "High", "low": "Low", "wind": "Wind", "rain_chance": "Chance of rain", "feels": "Feels Like", "wind_speed": "Wind Speed", "wind_gusts": "Wind Gusts", "wind_direction": "Wind Direction", "humidity": "Humidity", "dew_point": "Dew Point", "pressure": "Pressure", "visibility": "Visibility", "cloud_cover": "Cloud Cover", "precipitation": "Precipitation", "uv_index": "UV Index", "sunrise": "Sunrise", "sunset": "Sunset", "last_updated": "Last Updated", "weather_articles_meta": "Weather", "locale": "en-GB"};
+const PAGE = {"html_lang": "en-GB", "title": "London Weather | CGN London", "description": "London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London.", "kicker": "CGN London Weather", "hero_title": "London Weather Center", "hero_text": "Live London conditions, hourly forecast, extended outlook, rain and wind updates, and CGN Weekly Weather Brief coverage using metric measurements for London readers.", "radar": "Weather Radar", "radar_small": "Open London weather warnings, rain tracking, flood alerts, and weather tools.", "weekly": "Weekly Weather Forecast", "weekly_small": "Watch the latest CGN Weekly Weather Brief for London and UK conditions.", "search": "Search city or place", "default_label": "London, England", "next12": "Next 12 Hours", "next12_sub": "Starts at the current London forecast hour", "extended": "Extended Forecast", "weather_note": "Weather data is provided for informational purposes and may update throughout the day. Forecasts should be checked regularly during heavy rain, high wind, heat, flooding risk, poor visibility, rail disruption, aviation delays, or severe weather.", "live_span": "Weather and weekly forecast source panel", "live_title": "CGN London Weather Center", "live_sub": "This player loads only the CGN Weekly Weather Brief from the main CGN Weather Center.", "open_weekly": "Open Weekly Weather Brief", "radar_btn": "Radar", "weather_btn": "Weather", "sports_btn": "Sports", "now_showing": "Now showing:", "news_title": "Latest Weekly Weather Briefs", "news_sub": "5 most recent CGN Weekly Weather Briefs from the Articles sheet", "loading_articles": "Loading the latest CGN Weekly Weather Briefs...", "no_articles": "No Weekly Weather Briefs are available right now.", "articles_unavailable": "Weekly Weather Briefs are temporarily unavailable.", "data_unavailable": "Weather data is temporarily unavailable. Please try another location or refresh the page.", "connection_error": "Weather data is temporarily unavailable. Please check your connection and try again.", "forecast_label_suffix": "-day outlook", "today": "Today", "high": "High", "low": "Low", "wind": "Wind", "rain_chance": "Chance of rain", "feels": "Feels Like", "wind_speed": "Wind Speed", "wind_gusts": "Wind Gusts", "wind_direction": "Wind Direction", "humidity": "Humidity", "dew_point": "Dew Point", "pressure": "Pressure", "visibility": "Visibility", "cloud_cover": "Cloud Cover", "precipitation": "Precipitation", "uv_index": "UV Index", "sunrise": "Sunrise", "sunset": "Sunset", "last_updated": "Last Updated", "weather_articles_meta": "Weather", "locale": "en-GB"};
 
 let forecastDays = 7;
 let currentLat = 51.5072;
 let currentLon = -0.1276;
-let currentLabel = PAGE.default_label || "London, United Kingdom";
+let currentLabel = PAGE.default_label || "London, England";
 
 function setActiveButton(){
   [1,3,5,7,10,14].forEach(days => {
@@ -884,20 +873,17 @@ function getArticleTime(article){
 }
 
 function buildWeatherArticleUrl(article){
-  const existingUrl = String(article.url || article.canonical_url || "").trim();
+  const existingUrl = String(article.url || article.canonical_url || article.canonicalUrl || "").trim();
   if(existingUrl){
-    let pathOnly = existingUrl.replace(/^https?:\/\/[^/]+/i,"");
-    if(pathOnly.indexOf("/" + LANG + "/news/") === 0 || pathOnly.indexOf("/" + LANG + "/weather/") === 0){
-      return pathOnly.endsWith("/") ? pathOnly : pathOnly + "/";
-    }
+    return existingUrl;
   }
-  const slug = slugify(article.slug || article.title || "weather-story");
+  const slug = slugify(article.slug || article.title || "weekly-weather-brief");
   const time = getArticleTime(article);
   const date = time ? new Date(time) : new Date();
   const year = date.getUTCFullYear();
   const month = String(date.getUTCMonth() + 1).padStart(2,"0");
   const day = String(date.getUTCDate()).padStart(2,"0");
-  return `/${LANG}/news/${year}/${month}/${day}/${slug}/`;
+  return `https://www.cgnnews.net/weather/${year}/${month}/${day}/${slug}/`;
 }
 
 function formatArticleDate(article){
@@ -910,25 +896,38 @@ async function loadWeatherArticles(){
   const mount = document.getElementById("weatherArticles");
   if(!mount) return;
 
+  function normalizeArticlePayload(payload){
+    if(Array.isArray(payload)) return payload;
+    if(payload && Array.isArray(payload.articles)) return payload.articles;
+    if(payload && Array.isArray(payload.rows)) return payload.rows;
+    if(payload && Array.isArray(payload.data)) return payload.data;
+    if(payload && payload.success && Array.isArray(payload.items)) return payload.items;
+    return [];
+  }
+
+  function isPublishedArticle(article){
+    const status = String((article && article.status) || "published").trim().toLowerCase();
+    return !status || status === "published";
+  }
+
+  function isWeeklyWeatherBrief(article){
+    const title = String((article && article.title) || "");
+    const slug = String((article && article.slug) || "");
+    const category = String((article && article.category) || "");
+    return /weekly\s+weather\s+brief/i.test(title) ||
+           /weekly-weather-brief/i.test(slug) ||
+           (/weather/i.test(category) && /weekly/i.test(title) && /brief/i.test(title));
+  }
+
   try{
-    async function readArticlesFrom(url){
-      const response = await fetch(url,{cache:"no-store"});
-      const json = await response.json();
-      if(Array.isArray(json)) return json;
-      if(Array.isArray(json.articles)) return json.articles;
-      if(json && json.success && Array.isArray(json.data)) return json.data;
-      if(json && json.success && Array.isArray(json.items)) return json.items;
-      return [];
-    }
-
-    let articles = await readArticlesFrom(`${CGN_API_BASE}?action=london_articles&bureau=london&language=${encodeURIComponent(LANG)}&category=Weather&limit=6&format=paged`);
-
-    if(!articles.length){
-      const allArticles = await readArticlesFrom(`${CGN_API_BASE}?action=london_articles&bureau=london&language=${encodeURIComponent(LANG)}&limit=60&format=paged`);
-      articles = allArticles.filter(function(article){
-        return slugify(article.category || "") === "weather";
-      }).slice(0,6);
-    }
+    const response = await fetch(`${CGN_API_BASE}?action=articles&limit=300`,{cache:"no-store"});
+    if(!response.ok) throw new Error("Articles API " + response.status);
+    const payload = await response.json();
+    const articles = normalizeArticlePayload(payload)
+      .filter(isPublishedArticle)
+      .filter(isWeeklyWeatherBrief)
+      .sort(function(a,b){ return getArticleTime(b) - getArticleTime(a); })
+      .slice(0,5);
 
     if(!articles.length){
       mount.innerHTML = `<div class="weather-articles-empty">${safeText(PAGE.no_articles)}</div>`;
@@ -938,18 +937,18 @@ async function loadWeatherArticles(){
     mount.innerHTML = "";
 
     articles.forEach(function(article){
-      const title = safeText(article.title || "Weather Update");
-      const summary = safeText(article.summary || article.subtitle || "");
+      const title = safeText(article.title || "CGN Weekly Weather Brief");
+      const summary = safeText(article.summary || article.subtitle || article.description || "Open the latest CGN Weekly Weather Brief for the full forecast.");
       const image = safeText(article.hero_image_url || article.image || "/assets/CGNWeatherBrief01.png");
-      const author = safeText(article.author || "CGN London");
+      const author = safeText(article.author || "CGN Weather");
       const date = safeText(formatArticleDate(article));
       const url = buildWeatherArticleUrl(article);
 
       mount.insertAdjacentHTML("beforeend", `
         <a class="weather-article-card" href="${url}" aria-label="Read ${title}">
-          <img src="${image}" alt="${title}" loading="lazy">
+          <img src="${image}" alt="${title}" loading="lazy" onerror="this.src='/assets/CGNWeatherBrief01.png';">
           <div class="weather-article-body">
-            <div class="weather-article-meta">${safeText(PAGE.weather_articles_meta)} • ${author}${date ? " • " + date : ""}</div>
+            <div class="weather-article-meta">Weekly Weather Brief${author ? " • " + author : ""}${date ? " • " + date : ""}</div>
             <h3>${title}</h3>
             <p>${summary}</p>
           </div>
