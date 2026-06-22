@@ -8,17 +8,19 @@
   <meta name="cgn-language" content="en">
   <meta name="cgn-api-base" content="https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec">
 
-  <title>CGN London | Local Bureau Team</title>
-  <meta name="description" content="Meet the CGN London bureau team covering the United Kingdom, Europe and global stories for CGN News readers.">
+  <title>CGN London | Live News, Weather, Sports &amp; Local Bureau Team</title>
+  <meta name="description" content="CGN London provides live bureau coverage, London weather in metric units, local sports links, and the CGN London bureau team covering the United Kingdom, Europe, and global stories.">
   <link rel="canonical" href="https://london.cgnnews.net/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGN London">
-  <meta property="og:title" content="CGN London | Local Bureau Team">
-  <meta property="og:description" content="Meet the CGN London bureau team covering the United Kingdom, Europe and global stories for CGN News readers.">
+  <meta property="og:title" content="CGN London | Live News, Weather, Sports &amp; Local Bureau Team">
+  <meta property="og:description" content="CGN London provides live bureau coverage, London weather in metric units, local sports links, and the CGN London bureau team covering the United Kingdom, Europe, and global stories.">
   <meta property="og:url" content="https://london.cgnnews.net/">
   <meta property="og:image" content="https://london.cgnnews.net/assets/CGNWebBanner01.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CGN London | Live News, Weather, Sports &amp; Local Bureau Team">
+  <meta name="twitter:description" content="CGN London provides live bureau coverage, London weather in metric units, local sports links, and the CGN London bureau team covering the United Kingdom, Europe, and global stories.">
   <meta name="twitter:image" content="https://london.cgnnews.net/assets/CGNWebBanner01.png">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -230,6 +232,319 @@
       top: 0 !important;
     }
 
+
+
+    .london-live-app {
+      margin: 28px 0 0;
+      padding: 24px;
+      background: linear-gradient(135deg, #07172f 0%, #0b2b57 100%);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 14px;
+      color: #fff;
+      box-shadow: 0 18px 44px rgba(7, 23, 47, .18);
+    }
+
+    .london-live-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .london-live-kicker {
+      margin: 0 0 7px;
+      color: #f2d990;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .london-live-title {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .london-live-copy {
+      max-width: 760px;
+      margin: 9px 0 0;
+      color: #dbe4f2;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .london-live-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(310px, .85fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .london-live-feature,
+    .london-widget {
+      background: rgba(255, 255, 255, .96);
+      color: var(--cgn-ink);
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+    }
+
+    .london-live-feature {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 360px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(182, 138, 46, .20), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .london-live-feature-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 12px;
+      color: var(--cgn-gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .london-live-feature-title {
+      margin: 0;
+      color: var(--cgn-navy);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .london-live-feature-copy {
+      margin: 14px 0 0;
+      color: #334155;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .london-live-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .london-live-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 11px 15px;
+      border: 1px solid var(--cgn-navy);
+      border-radius: 999px;
+      background: var(--cgn-navy);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .london-live-btn:hover,
+    .london-live-btn:focus {
+      background: #0d3670;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .london-live-btn.secondary {
+      background: #fff;
+      color: var(--cgn-navy);
+    }
+
+    .london-live-btn.secondary:hover,
+    .london-live-btn.secondary:focus {
+      background: #f2d990;
+      color: var(--cgn-navy);
+    }
+
+    .london-live-side {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .london-widget {
+      padding: 16px;
+    }
+
+    .london-widget-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .london-widget-title {
+      margin: 0;
+      color: var(--cgn-navy);
+      font-size: 19px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .london-weather-now {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #f8fafc;
+      border: 1px solid #e5ebf3;
+      border-radius: 12px;
+    }
+
+    .london-weather-now strong {
+      color: var(--cgn-navy);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .london-weather-now span {
+      display: block;
+      margin-top: 4px;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .london-weather-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .london-weather-metric {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #e5ebf3;
+      border-radius: 10px;
+      color: #334155;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .london-weather-metric strong {
+      display: block;
+      color: var(--cgn-navy);
+      font-size: 12px;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 2px;
+    }
+
+    .london-sports-teams {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+
+    .london-team-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid #e5ebf3;
+      color: var(--cgn-navy);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .london-latest-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .london-latest-item {
+      display: block;
+      padding: 10px 11px;
+      border: 1px solid #e5ebf3;
+      border-radius: 10px;
+      background: #f8fafc;
+      color: var(--cgn-navy);
+      text-decoration: none;
+    }
+
+    .london-latest-item:hover,
+    .london-latest-item:focus {
+      border-color: var(--cgn-gold);
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .london-latest-item strong {
+      display: block;
+      color: var(--cgn-navy);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .london-latest-item span {
+      display: block;
+      margin-top: 4px;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .london-source-note,
+    .london-status {
+      margin: 10px 0 0;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .london-status {
+      padding: 12px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      color: #475569;
+    }
+
+    @media (max-width: 960px) {
+      .london-live-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .london-live-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .london-live-feature {
+        min-height: 0;
+      }
+    }
+
     @media (max-width: 760px) {
       .bureau-page {
         width: min(100% - 20px, 1180px);
@@ -258,6 +573,24 @@
       .member-copy h2 {
         font-size: 27px;
       }
+
+      .london-live-app {
+        margin-top: 20px;
+        padding: 18px;
+      }
+
+      .london-weather-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .london-live-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .london-live-btn {
+        width: 100%;
+      }
     }
   </style>
 
@@ -285,6 +618,69 @@
         <button type="button" data-cgn-language-link="ro">Română</button>
         <button type="button" data-cgn-language-link="nl">Nederlands</button>
         <button type="button" data-cgn-language-link="uk">Українська</button>
+      </div>
+    </section>
+
+    <section class="london-live-app" aria-labelledby="london-live-title">
+      <div class="london-live-head">
+        <div>
+          <p class="london-live-kicker">CGN LIVE London</p>
+          <h2 id="london-live-title" class="london-live-title">CGN LIVE London</h2>
+          <p class="london-live-copy">Live London bureau coverage, local weather, sports links, and the latest CGN News stories from the Articles sheet.</p>
+        </div>
+      </div>
+
+      <div class="london-live-grid">
+        <article class="london-live-feature" id="london-live-feature" aria-live="polite">
+          <div>
+            <div class="london-live-feature-meta">Latest from CGN Articles</div>
+            <h3 class="london-live-feature-title">Loading London coverage...</h3>
+            <p class="london-live-feature-copy">Checking recent CGN News articles for London-dateline reporting from the past 72 hours.</p>
+          </div>
+          <div class="london-live-actions">
+            <a class="london-live-btn" href="/">Latest News</a>
+            <a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a>
+          </div>
+        </article>
+
+        <div class="london-live-side">
+          <article class="london-widget" aria-labelledby="london-weather-title">
+            <div class="london-widget-head">
+              <h3 id="london-weather-title" class="london-widget-title">London Weather</h3>
+              <a class="london-live-btn secondary" href="/weather/">Open London Weather</a>
+            </div>
+            <div id="london-weather-content" aria-live="polite">
+              <p class="london-status">Loading London weather in Celsius and km/h...</p>
+            </div>
+            <p class="london-source-note">Weather data: Open-Meteo / UKMO model support. Check Met Office warnings for official public safety alerts.</p>
+          </article>
+
+          <article class="london-widget" aria-labelledby="london-sports-title">
+            <div class="london-widget-head">
+              <h3 id="london-sports-title" class="london-widget-title">London Sports</h3>
+              <a class="london-live-btn secondary" href="/sports/">Open London Sports</a>
+            </div>
+            <div id="london-sports-content"></div>
+            <p class="london-source-note">Fixtures and results can change. Check official league and club sources.</p>
+          </article>
+
+          <article class="london-widget" aria-labelledby="london-latest-title">
+            <div class="london-widget-head">
+              <h3 id="london-latest-title" class="london-widget-title">Latest London Articles</h3>
+            </div>
+            <div id="london-latest-list" class="london-latest-list" aria-live="polite">
+              <p class="london-status">Loading London-dateline articles and the latest Weekly Weather Brief...</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="london-live-actions" aria-label="London quick links">
+        <a class="london-live-btn" href="/">Latest News</a>
+        <a class="london-live-btn" href="/weather/">London Weather</a>
+        <a class="london-live-btn" href="/sports/">London Sports</a>
+        <a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a>
+        <a class="london-live-btn secondary" href="mailto:london@cgnnews.net">Contact London</a>
       </div>
     </section>
 
@@ -391,5 +787,275 @@
   </main>
 
   <div id="cgn-site-footer"></div>
+
+  <script>
+    function safeText(value){
+      return String(value || "").replace(/[&<>\"']/g, function(c){
+        return {"&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#039;"}[c];
+      });
+    }
+
+    function safeHref(value){
+      return String(value || "").trim().replace(/[\"'<>\s]/g, "");
+    }
+
+    function slugify(value){
+      return String(value || "")
+        .toLowerCase()
+        .replace(/&/g, " and ")
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function stripHtml(value){
+      return String(value || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    }
+
+    function parseDate(value){
+      if(!value) return 0;
+      if(value instanceof Date){
+        const time = value.getTime();
+        return Number.isFinite(time) ? time : 0;
+      }
+      let raw = String(value || "").trim();
+      if(!raw) return 0;
+      let parsed = Date.parse(raw);
+      if(Number.isFinite(parsed)) return parsed;
+      raw = raw.replace(/^[A-Za-z]+,\s*/, "").replace(/\bat\b/i, "").replace(/\bBST\b/g, "GMT+0100").replace(/\bGMT\b/g, "GMT+0000").replace(/\bEDT\b/g, "GMT-0400").replace(/\bEST\b/g, "GMT-0500");
+      parsed = Date.parse(raw);
+      return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function getArticleTime(article){
+      if(!article) return 0;
+      const candidates = [article.published_at, article.publishedAt, article.updated_at, article.updatedAt, article.date, article.created_at, article.createdAt];
+      for(const value of candidates){
+        const parsed = parseDate(value);
+        if(parsed) return parsed;
+      }
+      return 0;
+    }
+
+    function formatLondonDate(value){
+      const time = typeof value === "number" ? value : parseDate(value);
+      if(!time) return "";
+      return new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/London",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(new Date(time));
+    }
+
+    function buildArticleUrl(article){
+      const existingUrl = String((article && (article.url || article.canonical_url || article.canonicalUrl)) || "").trim();
+      if(existingUrl) return safeHref(existingUrl);
+      const slug = slugify((article && (article.slug || article.title)) || "article");
+      const time = getArticleTime(article) || Date.now();
+      const parts = new Intl.DateTimeFormat("en-CA", { timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit" }).formatToParts(new Date(time));
+      const map = {};
+      parts.forEach(function(part){ map[part.type] = part.value; });
+      return `/news/${map.year}/${map.month}/${map.day}/${slug}`;
+    }
+
+    function normalizeArticlePayload(payload){
+      if(Array.isArray(payload)) return payload;
+      if(payload && Array.isArray(payload.articles)) return payload.articles;
+      if(payload && Array.isArray(payload.rows)) return payload.rows;
+      if(payload && Array.isArray(payload.data)) return payload.data;
+      return [];
+    }
+
+    function isPublishedArticle(article){
+      const status = String((article && article.status) || "published").trim().toLowerCase();
+      return !status || status === "published";
+    }
+
+    function isLondonDatelineArticle(article){
+      const dateline = String((article && (article.dateline || article.location)) || "");
+      const body = String((article && (article.body_html || article.body || article.content || article.html)) || "");
+      const firstText = stripHtml(body).slice(0, 500);
+      return /\bLONDON\s*(\||&#124;|—|-)/i.test(dateline) || /<strong>\s*LONDON\s*(\||&#124;|—|-)/i.test(body) || /\bLONDON\s*(\||—|-)\s*/i.test(firstText);
+    }
+
+    function isWeeklyWeatherBrief(article){
+      const title = String((article && article.title) || "");
+      const slug = String((article && article.slug) || "");
+      return /weekly\s+weather\s+brief/i.test(title) || /weekly-weather-brief/i.test(slug);
+    }
+
+    function articleSummary(article){
+      return String((article && (article.summary || article.subtitle || article.description || article.seo_description)) || "").trim();
+    }
+
+    function renderFeatureArticle(article, label){
+      const mount = document.getElementById("london-live-feature");
+      if(!mount) return;
+      const title = safeText(article.title || "CGN London Update");
+      const category = safeText(article.category || "CGN News");
+      const date = safeText(formatLondonDate(getArticleTime(article)) || "Latest update");
+      const copy = safeText(articleSummary(article) || "Open the latest CGN News article for the full report.");
+      const url = safeHref(buildArticleUrl(article));
+      mount.innerHTML = `
+        <div>
+          <div class="london-live-feature-meta">${safeText(label || "Latest from CGN Articles")} · ${category} · ${date}</div>
+          <h3 class="london-live-feature-title">${title}</h3>
+          <p class="london-live-feature-copy">${copy}</p>
+        </div>
+        <div class="london-live-actions">
+          <a class="london-live-btn" href="${url}">Read Article</a>
+          <a class="london-live-btn secondary" href="/weather/">London Weather</a>
+          <a class="london-live-btn secondary" href="/sports/">London Sports</a>
+        </div>
+      `;
+    }
+
+    function renderFeatureFallback(message){
+      const mount = document.getElementById("london-live-feature");
+      if(!mount) return;
+      mount.innerHTML = `
+        <div>
+          <div class="london-live-feature-meta">Latest from CGN Articles</div>
+          <h3 class="london-live-feature-title">London coverage is loading</h3>
+          <p class="london-live-feature-copy">${safeText(message || "No London-dateline articles from the past 72 hours are available right now. The Weekly Weather Brief remains linked when available.")}</p>
+        </div>
+        <div class="london-live-actions">
+          <a class="london-live-btn" href="/">Latest News</a>
+          <a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a>
+        </div>
+      `;
+    }
+
+    function renderLatestList(items){
+      const mount = document.getElementById("london-latest-list");
+      if(!mount) return;
+      if(!items.length){
+        mount.innerHTML = '<p class="london-status">No London-dateline articles from the past 72 hours are available right now. The latest Weekly Weather Brief will appear here when available.</p>';
+        return;
+      }
+      mount.innerHTML = items.slice(0, 6).map(function(article){
+        const url = safeHref(buildArticleUrl(article));
+        const title = safeText(article.title || "CGN London Update");
+        const category = safeText(article.category || "CGN News");
+        const date = safeText(formatLondonDate(getArticleTime(article)) || "Latest");
+        return `<a class="london-latest-item" href="${url}"><strong>${title}</strong><span>${category} · ${date}</span></a>`;
+      }).join("");
+    }
+
+    async function loadLondonLiveArticles(){
+      const base = document.querySelector('meta[name="cgn-api-base"]')?.content || "";
+      const url = base ? base.replace(/\?+$/, "") + "?action=articles&limit=300" : "";
+      if(!url){
+        renderFeatureFallback("CGN Articles API configuration is unavailable.");
+        renderLatestList([]);
+        return;
+      }
+
+      try{
+        const response = await fetch(url, { cache:"no-store" });
+        if(!response.ok) throw new Error("CGN Articles API " + response.status);
+        const payload = await response.json();
+        const rows = normalizeArticlePayload(payload).filter(isPublishedArticle);
+        const cutoff = Date.now() - (72 * 60 * 60 * 1000);
+        const londonRecent = rows
+          .filter(function(article){ return getArticleTime(article) >= cutoff && isLondonDatelineArticle(article); })
+          .sort(function(a, b){ return getArticleTime(b) - getArticleTime(a); });
+        const weeklyWeather = rows
+          .filter(isWeeklyWeatherBrief)
+          .sort(function(a, b){ return getArticleTime(b) - getArticleTime(a); })[0];
+        const latestItems = londonRecent.slice(0, 5);
+        if(weeklyWeather && !latestItems.some(function(article){ return buildArticleUrl(article) === buildArticleUrl(weeklyWeather); })){
+          latestItems.push(weeklyWeather);
+        }
+
+        if(londonRecent.length){
+          renderFeatureArticle(londonRecent[0], "London dateline · Last 72 hours");
+        } else if(weeklyWeather){
+          renderFeatureArticle(weeklyWeather, "Weekly Weather Brief");
+        } else {
+          renderFeatureFallback("No London-dateline articles from the past 72 hours are available right now.");
+        }
+        renderLatestList(latestItems);
+      } catch(error){
+        console.error("CGN London live article load failed:", error);
+        renderFeatureFallback("CGN Articles are temporarily unavailable. Use the quick links for London weather, sports, and CGN News.");
+        renderLatestList([]);
+      }
+    }
+
+    function weatherCodeLabel(code){
+      const value = Number(code);
+      if(value === 0) return "Sunny";
+      if(value === 1) return "Mostly Sunny";
+      if(value === 2) return "Partly Cloudy";
+      if(value === 3) return "Cloudy";
+      if(value === 45 || value === 48) return "Fog";
+      if([51, 53, 55, 56, 57, 61, 80, 81, 82].includes(value)) return "Showers";
+      if([63, 65, 66, 67].includes(value)) return "Rain";
+      if([95, 96, 99].includes(value)) return "Thunderstorms";
+      if(value >= 70 && value <= 77) return "Showers";
+      return "Partly Cloudy";
+    }
+
+    async function loadLondonWeather(){
+      const mount = document.getElementById("london-weather-content");
+      if(!mount) return;
+      const url = "https://api.open-meteo.com/v1/forecast?latitude=51.5072&longitude=-0.1276&timezone=Europe%2FLondon&temperature_unit=celsius&wind_speed_unit=kmh&precipitation_unit=mm&current=temperature_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_days=3";
+      try{
+        const response = await fetch(url, { cache:"no-store" });
+        if(!response.ok) throw new Error("Open-Meteo " + response.status);
+        const data = await response.json();
+        const currentTemp = Math.round(Number(data?.current?.temperature_2m));
+        const currentWind = Math.round(Number(data?.current?.wind_speed_10m));
+        const currentLabel = weatherCodeLabel(data?.current?.weather_code ?? data?.daily?.weather_code?.[0]);
+        const high = Math.round(Number(data?.daily?.temperature_2m_max?.[0]));
+        const low = Math.round(Number(data?.daily?.temperature_2m_min?.[0]));
+        const precip = Math.round(Number(data?.daily?.precipitation_probability_max?.[0] || 0));
+        const days = (data?.daily?.time || []).slice(0, 3).map(function(day, index){
+          const label = new Intl.DateTimeFormat("en-GB", { timeZone:"Europe/London", weekday:"short" }).format(new Date(day + "T12:00:00"));
+          const dayHigh = Math.round(Number(data.daily.temperature_2m_max[index]));
+          const dayLow = Math.round(Number(data.daily.temperature_2m_min[index]));
+          const dayPrecip = Math.round(Number(data.daily.precipitation_probability_max[index] || 0));
+          return `<div class="london-weather-metric"><strong>${safeText(label)}</strong>${dayLow}° / ${dayHigh}°C<br>${dayPrecip}% precip</div>`;
+        }).join("");
+        mount.innerHTML = `
+          <div class="london-weather-now">
+            <div><strong>${Number.isFinite(currentTemp) ? currentTemp : high}°C</strong><span>${safeText(currentLabel)}</span></div>
+            <div><span>High / Low</span><strong style="font-size:22px;">${low}° / ${high}°C</strong></div>
+          </div>
+          <div class="london-weather-grid">
+            <div class="london-weather-metric"><strong>Precip</strong>${Number.isFinite(precip) ? precip : 0}% chance</div>
+            <div class="london-weather-metric"><strong>Wind</strong>${Number.isFinite(currentWind) ? currentWind : 0} km/h</div>
+            <div class="london-weather-metric"><strong>Units</strong>Celsius · km/h</div>
+            ${days}
+          </div>
+        `;
+      } catch(error){
+        console.error("London weather load failed:", error);
+        mount.innerHTML = '<p class="london-status">London weather is temporarily unavailable. Open the London Weather page for the latest forecast.</p>';
+      }
+    }
+
+    function renderLondonSports(){
+      const mount = document.getElementById("london-sports-content");
+      if(!mount) return;
+      const teams = ["Arsenal", "Brentford", "Chelsea", "Crystal Palace", "Fulham", "Tottenham Hotspur", "West Ham United"];
+      mount.innerHTML = `
+        <div class="london-sports-teams">
+          ${teams.map(function(team){ return `<span class="london-team-chip">${safeText(team)}</span>`; }).join("")}
+        </div>
+        <p class="london-source-note">London sports coverage links to CGN London Sports. No live scores are shown unless directly supported by a verified source.</p>
+      `;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+      loadLondonLiveArticles();
+      loadLondonWeather();
+      renderLondonSports();
+    });
+  </script>
+
 </body>
 </html>
