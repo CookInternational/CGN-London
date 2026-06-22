@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+<!-- CGN London Weather Page | v1.0.10 Alpha | 2026-05-30T00:00:00Z UTC -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>London Weather | CGN London</title>
+<meta content="London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CGN London" name="author"/>
+<link href="https://london.cgnnews.net/weather/" rel="canonical"/>
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon.ico" rel="shortcut icon"/>
+<meta content="#07172f" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="CGN London" property="og:site_name"/>
+<meta content="London Weather | CGN London" property="og:title"/>
+<meta content="London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London." property="og:description"/>
+<meta content="https://london.cgnnews.net/weather/" property="og:url"/>
+<meta content="https://london.cgnnews.net/assets/CGNWeatherCenterBanner01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="London Weather | CGN London" name="twitter:title"/>
+<meta content="London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London." name="twitter:description"/>
+<meta content="https://london.cgnnews.net/assets/CGNWeatherCenterBanner01.png" name="twitter:image"/>
+<link href="/assets/london.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "@id":"https://london.cgnnews.net/weather/#webpage",
+      "url":"https://london.cgnnews.net/weather/",
+      "name":"London Weather | CGN London",
+      "description":"London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London.",
+      "isPartOf":{"@id":"https://london.cgnnews.net/#website"},
+      "publisher":{"@id":"https://london.cgnnews.net/#organization"},
+      "about":{"@type":"Thing","name":"London weather forecast"},
+      "inLanguage":"en-GB"
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://london.cgnnews.net/#website",
+      "url":"https://london.cgnnews.net/",
+      "name":"CGN London",
+      "publisher":{"@id":"https://london.cgnnews.net/#organization"}
+    },
+    {
+      "@type":"NewsMediaOrganization",
+      "@id":"https://london.cgnnews.net/#organization",
+      "name":"CGN London",
+      "legalName":"Cook Global News Network",
+      "url":"https://london.cgnnews.net/",
+      "logo":{"@type":"ImageObject","url":"https://london.cgnnews.net/assets/CGNNewsLogo01.png"},
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"The Gherkin Building, 30 St Mary Axe, Suite 1200",
+        "addressLocality":"London",
+        "addressRegion":"England",
+        "postalCode":"EC3A 8EP",
+        "addressCountry":"GB"
+      },
+      "email":"london@cgnnews.net",
+      "sameAs":[
+        "https://instagram.com/cookglobalnews",
+        "https://x.com/CookGlobalNews",
+        "https://youtube.com/@CookGlobalNews"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --weather-navy:#07172f;--weather-blue:#0f3d6e;--weather-red:#a51e2f;--weather-gold:#d7a53f;--weather-border:#dfe6ef;--weather-muted:#657083;--weather-bg:#f6f8fb;--weather-card:#fff;--weather-max:1120px;
+}
+body{background:var(--weather-bg);}
+.weather-app{max-width:var(--weather-max);margin:34px auto;padding:0 20px 42px;font-family:Arial,Helvetica,sans-serif;color:#111827;}
+.weather-hero{position:relative;overflow:hidden;min-height:270px;display:flex;align-items:flex-end;margin-bottom:18px;border:1px solid #0b1729;background:#07172f;color:#fff;isolation:isolate;box-shadow:0 20px 42px rgba(7,23,47,.16);}
+.weather-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,23,47,.97) 0%,rgba(7,23,47,.70) 44%,rgba(7,23,47,.15) 100%),url("/assets/CGNWeatherCenterBanner01.png") center/cover no-repeat;z-index:0;}
+.weather-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 14% 16%,rgba(255,255,255,.16),transparent 24%),linear-gradient(135deg,rgba(215,165,63,.20),transparent 32%),linear-gradient(315deg,rgba(16,139,232,.16),transparent 40%);z-index:1;pointer-events:none;}
+.weather-hero-content{position:relative;z-index:2;max-width:780px;padding:30px 34px;}
+.weather-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#f8d074;font-weight:900;margin-bottom:10px;}
+.weather-kicker::before{content:"";width:9px;height:9px;border-radius:999px;background:#ff2d2d;box-shadow:0 0 0 5px rgba(255,45,45,.18);}
+.weather-hero h1{font-size:clamp(34px,5vw,58px);line-height:.98;margin:0 0 10px;letter-spacing:-.04em;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.35);}
+.weather-hero p{max-width:760px;color:#e8edf5;font-size:15px;line-height:1.55;margin:0;}
+.weather-action-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 22px;}
+.weather-action-btn{position:relative;overflow:hidden;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.16);box-shadow:0 16px 34px rgba(7,17,31,.14);isolation:isolate;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+.weather-action-btn:hover{transform:translateY(-2px);box-shadow:0 22px 48px rgba(7,17,31,.22);text-decoration:none;}
+.weather-action-copy,.weather-action-arrow{position:relative;z-index:2;}
+.weather-action-title{display:flex;align-items:center;gap:9px;font-size:18px;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;font-weight:900;}
+.weather-action-copy small{display:block;margin-top:6px;font-size:12px;line-height:1.35;color:rgba(255,255,255,.88);font-weight:800;}
+.weather-action-arrow{flex:0 0 auto;width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.12);font-size:20px;font-weight:900;}
+
+
+
+
+
+
+
+.weather-forecast-btn{background:radial-gradient(circle at 18% 20%,rgba(255,255,255,.92) 0 28px,rgba(255,255,255,.22) 29px 66px,transparent 68px),radial-gradient(circle at 78% 18%,rgba(255,255,255,.28),transparent 30%),linear-gradient(135deg,#fff3b0 0%,#ffc857 44%,#f97316 100%);color:#07111f;border-color:rgba(247,148,30,.5);}
+.weather-forecast-btn::before{content:"";position:absolute;left:-38px;top:-48px;width:170px;height:170px;background:conic-gradient(from 0deg,rgba(255,255,255,0) 0 11deg,rgba(255,255,255,.44) 12deg 18deg,rgba(255,255,255,0) 19deg 30deg);border-radius:50%;animation:weatherSunSpin 15s linear infinite;z-index:1;pointer-events:none;}
+.weather-forecast-btn .weather-action-copy small{color:rgba(7,17,31,.76);}
+.weather-forecast-btn .weather-action-arrow{border-color:rgba(7,17,31,.22);background:rgba(255,255,255,.48);color:#07111f;}
+.youtube-sun-icon{position:relative;display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border-radius:8px;background:#ff0000;box-shadow:0 0 0 4px rgba(255,255,255,.34),0 0 22px rgba(255,217,102,.78);flex:0 0 auto;}
+.youtube-sun-icon::before{content:"";width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid #fff;margin-left:2px;}
+.youtube-sun-icon::after{content:"";position:absolute;inset:-10px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 15deg,rgba(255,255,255,.48) 16deg 22deg,transparent 23deg 45deg);animation:weatherSunSpin 12s linear infinite reverse;z-index:-1;}
+@keyframes weatherButtonRainSweep{from{transform:translate3d(26px,-22px,0);}to{transform:translate3d(-44px,58px,0);}}
+@keyframes weatherRadarSweep{from{transform:rotate(-34deg);}to{transform:rotate(326deg);}}
+@keyframes weatherSunSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.search-box{margin-bottom:20px;position:relative;}
+#locationInput{width:100%;box-sizing:border-box;padding:14px;font-size:16px;border:1px solid #b7c0cf;border-radius:0;outline:none;background:#fff;}
+#locationInput:focus{border-color:#07172f;box-shadow:0 0 0 3px rgba(7,23,47,.08);}
+#suggestions{position:absolute;width:100%;background:#fff;border:1px solid #ddd;border-top:none;z-index:100;box-sizing:border-box;box-shadow:0 8px 20px rgba(0,0,0,.08);}
+#suggestions div{padding:11px 12px;cursor:pointer;font-size:14px;}
+#suggestions div:hover{background:#f5f5f5;}
+.current-weather{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b6bd3 0%,#1593f5 52%,#62c1ff 100%);color:#fff;padding:30px;box-shadow:0 18px 40px rgba(8,71,135,.22);isolation:isolate;}
+.current-weather::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 16% 18%,rgba(255,255,255,.28),transparent 26%),radial-gradient(circle at 84% 8%,rgba(255,255,255,.18),transparent 22%),linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0));pointer-events:none;z-index:0;}
+.current-weather.weather-clear{background:linear-gradient(135deg,#0873df 0%,#139af2 48%,#7bd4ff 100%);}
+.current-weather.weather-cloudy{background:linear-gradient(135deg,#2c6fae 0%,#5f9ed2 52%,#a6cbe5 100%);}
+.current-weather.weather-rain{background:linear-gradient(135deg,#0b326f 0%,#1168a7 52%,#3996c9 100%);}
+.current-weather.weather-snow{background:linear-gradient(135deg,#4d8fc4 0%,#8bc4ed 55%,#d7f0ff 100%);}
+.current-weather.weather-fog{background:linear-gradient(135deg,#567995 0%,#83a5bb 54%,#c5d7e1 100%);}
+.current-weather.weather-storm{background:linear-gradient(135deg,#071d42 0%,#123e73 52%,#1d6b9e 100%);}
+.current-weather.weather-night{background:linear-gradient(135deg,#061123 0%,#0b2144 55%,#173a63 100%);}
+.weather-effects{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.weather-content{position:relative;z-index:2;}
+.current-weather h2{margin:0 0 18px;font-size:30px;line-height:1.2;text-shadow:0 2px 14px rgba(0,0,0,.22);}
+.current-weather-main{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+.temp-main{font-size:72px;font-weight:bold;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,.22);}
+.icon-main{font-size:52px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.22));}
+#conditionText{font-size:18px;color:#f4fbff;margin-top:6px;}
+.feels-like-main{margin-top:7px;font-size:14px;color:rgba(255,255,255,.9);font-weight:700;}
+.today-summary{margin-top:20px;padding:14px 16px;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.14);color:#fff;line-height:1.45;font-size:15px;backdrop-filter:blur(8px);}
+.weather-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin-top:18px;}
+.weather-stat-card{min-height:68px;padding:12px;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.15);color:#fff;box-sizing:border-box;backdrop-filter:blur(8px);}
+.weather-stat-card span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.78);font-weight:800;margin-bottom:7px;}
+.weather-stat-card strong{display:block;font-size:18px;line-height:1.15;}
+#updated{margin-top:18px;font-size:13px;color:rgba(255,255,255,.86);}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.controls button{padding:9px 13px;border:1px solid rgba(255,255,255,.72);background:rgba(255,255,255,.14);color:#fff;cursor:pointer;border-radius:0;font-weight:700;backdrop-filter:blur(8px);}
+.controls button:hover,.controls button.active{background:#fff;color:#0b4f93;}
+.hourly-section,.forecast-section,.weather-articles-section{margin-top:28px;}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;border-bottom:1px solid #d9dee8;margin-bottom:14px;padding-bottom:10px;}
+.section-title h2{margin:0;font-size:22px;color:#07172f;}
+.section-title span{font-size:13px;color:#667085;}
+.hourly{display:flex;overflow-x:auto;gap:12px;padding-bottom:10px;}
+.hour{min-width:118px;text-align:center;border:1px solid #d9dee8;padding:12px 8px;background:#fff;box-sizing:border-box;}
+.hour .hour-icon{font-size:24px;margin:8px 0;}
+.hour .hour-temp{font-size:20px;font-weight:800;margin-bottom:6px;}
+.hour .hour-detail{font-size:11px;color:#555;line-height:1.35;}
+.forecast-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:15px;}
+.card{background:#fff;padding:16px 12px;border:1px solid #d9dee8;text-align:center;box-shadow:0 8px 20px rgba(16,24,40,.04);}
+.card .forecast-condition{font-size:12px;color:#555;min-height:30px;}
+.card .forecast-high-low{font-size:18px;font-weight:800;margin:8px 0;}
+.card .forecast-detail{font-size:11px;color:#555;line-height:1.4;text-align:left;border-top:1px solid #eee;margin-top:10px;padding-top:10px;}
+.card strong{display:block;margin-bottom:8px;}
+.weather-note{margin-top:22px;padding:14px;border:1px solid #d9dee8;background:#fff;color:#555;font-size:13px;line-height:1.45;}
+.error-box{margin-top:18px;padding:14px;border:1px solid #e1b5b5;background:#fff5f5;color:#7a1111;display:none;}
+.cloud-puff{position:absolute;width:210px;height:74px;border-radius:999px;background:rgba(255,255,255,.28);filter:blur(12px);opacity:.55;animation:cloudDrift linear infinite;}
+.fog-bank{position:absolute;left:-35%;width:170%;height:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.46),rgba(255,255,255,.28),transparent);filter:blur(18px);opacity:.62;animation:fogRoll linear infinite;}
+.raindrop{position:absolute;top:-24px;width:2px;height:24px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.78));opacity:.78;transform:rotate(8deg);animation:rainFall linear infinite;}
+.raindrop.heavy{width:3px;height:32px;opacity:.9;box-shadow:0 0 8px rgba(255,255,255,.22);}
+.snowflake{position:absolute;top:-18px;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 0 8px rgba(255,255,255,.55);animation:snowFall linear infinite;}
+.sleet-pellet{position:absolute;top:-16px;width:5px;height:10px;border-radius:999px;background:rgba(221,241,255,.9);box-shadow:0 0 8px rgba(255,255,255,.45);animation:sleetFall linear infinite;}
+.current-weather.weather-storm::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0%,transparent 44%,rgba(255,255,255,.28) 47%,transparent 51%,transparent 100%);opacity:0;animation:stormFlash 7s infinite;z-index:1;pointer-events:none;}
+@keyframes rainFall{from{transform:translate3d(0,-30px,0) rotate(8deg);}to{transform:translate3d(-34px,560px,0) rotate(8deg);}}
+@keyframes snowFall{0%{transform:translate3d(0,-20px,0);opacity:0;}10%{opacity:.95;}100%{transform:translate3d(36px,560px,0);opacity:.25;}}
+@keyframes fogRoll{0%{transform:translateX(-18%) translateY(0);opacity:.18;}20%{opacity:.66;}50%{transform:translateX(0) translateY(-8px);opacity:.52;}100%{transform:translateX(18%) translateY(0);opacity:.18;}}
+@keyframes cloudDrift{from{transform:translateX(-35vw);}to{transform:translateX(115vw);}}
+@keyframes sleetFall{from{transform:translate3d(0,-30px,0) rotate(10deg);}to{transform:translate3d(-26px,560px,0) rotate(10deg);}}
+@keyframes stormFlash{0%,90%,100%{opacity:0;}92%{opacity:.48;}93%{opacity:0;}95%{opacity:.22;}}
+.weather-articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.weather-article-card{border:1px solid #d9dee8;background:#fff;text-decoration:none;color:#111;display:flex;flex-direction:column;min-height:100%;box-shadow:0 8px 20px rgba(16,24,40,.04);}
+.weather-article-card:hover h3{text-decoration:underline;}
+.weather-article-card img{width:100%;height:145px;object-fit:cover;background:#eee;display:block;}
+.weather-article-body{padding:14px;}
+.weather-article-meta{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#666;font-weight:800;margin-bottom:7px;}
+.weather-article-body h3{margin:0 0 8px;font-size:18px;line-height:1.25;color:#07172f;}
+.weather-article-body p{margin:0;color:#555;line-height:1.45;font-size:13px;}
+.weather-articles-empty{border:1px solid #d9dee8;padding:14px;color:#555;background:#fff;}
+.cgn-weather-live{margin-top:30px;scroll-margin-top:120px;}
+.cgn-weather-live-shell{overflow:hidden;background:#07111f;color:#fff;border:1px solid #d9d9d9;box-shadow:0 18px 44px rgba(7,17,31,.14);isolation:isolate;}
+.cgn-weather-live-header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.14);background:radial-gradient(circle at 14% 16%,rgba(255,255,255,.10),transparent 26%),linear-gradient(135deg,#07111f 0%,#0b2038 58%,#102947 100%);}
+.cgn-weather-live-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:#ff4242;margin-bottom:6px;}
+.cgn-weather-live-dot{width:9px;height:9px;border-radius:50%;background:#ff2d2d;box-shadow:0 0 0 4px rgba(255,45,45,.18);}
+.cgn-weather-live h2{margin:0;font-size:28px;line-height:1.1;letter-spacing:.02em;color:#fff;}
+.cgn-weather-live-subtitle{margin:6px 0 0;color:#d9e1ee;font-size:14px;line-height:1.45;}
+.cgn-weather-live-open{color:#fff;border:1px solid rgba(255,255,255,.35);padding:9px 12px;text-decoration:none;font-size:12px;font-weight:900;text-transform:uppercase;white-space:nowrap;}
+.cgn-weather-live-open:hover{background:#fff;color:#07111f;text-decoration:none;}
+.cgn-weather-live-video-wrap{position:relative;width:100%;aspect-ratio:16/9;min-height:260px;background:#000;overflow:hidden;isolation:isolate;}
+.cgn-weather-live-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#000;pointer-events:auto;}
+.cgn-weather-live-fallback{display:none;position:absolute;inset:0;z-index:2;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 18% 18%,rgba(255,200,87,.20),transparent 30%),linear-gradient(135deg,#07111f,#111827);color:#fff;}
+.cgn-weather-live-fallback.show{display:flex;}
+.cgn-weather-live-fallback-card{width:min(820px,94%);display:grid;grid-template-columns:minmax(170px,280px) 1fr;gap:18px;align-items:center;text-align:left;padding:22px;border:1px solid rgba(255,255,255,.18);background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.04));box-shadow:0 18px 46px rgba(0,0,0,.34);}
+.cgn-weather-live-fallback-image{width:100%;aspect-ratio:16/9;object-fit:cover;background:#050b14;border:1px solid rgba(255,255,255,.16);}
+.cgn-weather-live-fallback-card strong{display:block;font-size:23px;line-height:1.1;margin-bottom:8px;}
+.cgn-weather-live-fallback-card p{margin:0 0 14px;color:#d9e1ee;line-height:1.45;}
+.cgn-weather-live-fallback-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.cgn-weather-live-fallback-actions a{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;background:#fff;color:#07111f;text-decoration:none;font-weight:900;}
+.cgn-weather-live-fallback-actions a+a{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);}
+
+
+
+.cgn-weather-live-meta{padding:0 20px 18px;background:#0b1626;}
+.cgn-weather-live-meta p{margin:0;color:#d9e1ee;font-size:13px;line-height:1.45;}
+.cgn-weather-live-meta strong{color:#fff;}
+.cgn-weather-live-disclaimer{margin-top:8px!important;color:#aeb8c8!important;font-size:12px!important;}
+
+.weather-home-btn{
+  background:
+    radial-gradient(circle at 16% 18%, rgba(215,165,63,.36), transparent 30%),
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,.16), transparent 26%),
+    linear-gradient(135deg,#07172f 0%,#123f75 54%,#0f6ca8 100%);
+  border-color:rgba(215,165,63,.34);
+}
+
+.weather-home-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255,255,255,.18) 46%, transparent 52%, transparent 100%),
+    radial-gradient(circle at 86% 84%, rgba(255,255,255,.12), transparent 28%);
+  opacity:.9;
+  z-index:1;
+  pointer-events:none;
+}
+
+.weather-home-btn::after{
+  content:"";
+  position:absolute;
+  right:-46px;
+  bottom:-46px;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.14);
+  box-shadow:0 0 0 18px rgba(255,255,255,.045), 0 0 0 42px rgba(255,255,255,.025);
+  z-index:1;
+  pointer-events:none;
+}
+
+.home-icon{
+  position:relative;
+  display:inline-block;
+  width:30px;
+  height:27px;
+  flex:0 0 auto;
+}
+
+.home-icon::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:9px;
+  width:24px;
+  height:16px;
+  border-radius:2px;
+  background:#fff;
+  box-shadow:0 0 18px rgba(255,255,255,.36);
+}
+
+.home-icon::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:1px;
+  width:21px;
+  height:21px;
+  background:#fff;
+  transform:rotate(45deg);
+  border-radius:2px;
+}
+
+.home-icon span{
+  position:absolute;
+  left:13px;
+  bottom:2px;
+  width:6px;
+  height:10px;
+  border-radius:2px 2px 0 0;
+  background:#07172f;
+  z-index:2;
+}
+
+@media(max-width:900px){
+  .weather-app{margin:28px auto;padding:0 16px 34px;}
+  .weather-hero{min-height:210px;}
+  .weather-hero-content{padding:22px 20px;}
+  .weather-action-panel{grid-template-columns:1fr;gap:12px;margin-bottom:20px;}
+  .current-weather{padding:24px 18px;}
+  .current-weather-main{justify-content:center;text-align:center;}
+  .temp-main{font-size:58px;}
+  .controls{justify-content:center;}
+  .controls button{flex:1 1 84px;}
+  .weather-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .forecast-grid{display:flex;overflow-x:auto;gap:12px;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+  .forecast-grid .card{flex:0 0 210px;scroll-snap-align:start;box-sizing:border-box;}
+  .weather-articles-grid{grid-template-columns:1fr;}
+  .cgn-weather-live-header{flex-direction:column;align-items:stretch;padding:16px;}
+  .cgn-weather-live h2{font-size:24px;}
+  .cgn-weather-live-open{text-align:center;}
+  .cgn-weather-live-video-wrap{min-height:220px;}
+  
+  
+  .cgn-weather-live-fallback{align-items:stretch;justify-content:flex-start;padding:12px;}
+  .cgn-weather-live-fallback-card{width:100%;max-height:100%;overflow:auto;grid-template-columns:1fr;text-align:center;padding:16px;}
+  .cgn-weather-live-fallback-image{max-height:130px;object-fit:contain;}
+  .cgn-weather-live-fallback-actions{justify-content:center;}
+  .cgn-weather-live-fallback-actions a{width:100%;box-sizing:border-box;}
+}
+@media(max-width:560px){.weather-hero h1{font-size:32px;}.weather-action-arrow{width:32px;height:32px;}.youtube-sun-icon{width:31px;height:22px;}.cgn-weather-live-video-wrap{min-height:235px;}}
+</style>
+</head>
+<body data-lang="en">
+<div id="cgn-london-header"></div>
+<main class="weather-app">
+<section aria-label="CGN London Weather Center" class="weather-hero">
+<div class="weather-hero-content">
+<div class="weather-kicker">CGN London Weather</div>
+<h1>London Weather Center</h1>
+<p>Live London conditions, hourly forecast, extended outlook, rain and wind updates, and CGN Weekly Weather Brief coverage using metric measurements for London readers.</p>
+</div>
+</section>
+<nav aria-label="CGN London Weather quick actions" class="weather-action-panel">
+<a aria-label="Home" class="weather-action-btn weather-home-btn" href="/">
+<span class="weather-action-copy">
+<span class="weather-action-title">Home <span aria-hidden="true" class="home-icon"><span></span></span></span>
+<small>Return to the CGN London home page.</small>
+</span>
+<span aria-hidden="true" class="weather-action-arrow">→</span>
+</a>
+<a aria-label="Weekly Weather Forecast" class="weather-action-btn weather-forecast-btn" href="https://www.cgnnews.net/weather/weekly-weather-brief/">
+<span class="weather-action-copy">
+<span class="weather-action-title">Weekly Weather Forecast <span aria-hidden="true" class="youtube-sun-icon"></span></span>
+<small>Watch the latest CGN Weekly Weather Brief for London and UK conditions.</small>
+</span>
+<span aria-hidden="true" class="weather-action-arrow">→</span>
+</a>
+</nav>
+<div class="search-box">
+<input aria-label="Search city or place" autocomplete="off" id="locationInput" oninput="suggestLocation()" placeholder="Search city or place"/>
+<div id="suggestions"></div>
+</div>
+<div class="error-box" id="weatherError"></div>
+<section aria-label="Current London weather conditions" class="current-weather weather-clear">
+<div aria-hidden="true" class="weather-effects" id="weatherEffects"></div>
+<div class="weather-content">
+<h2 id="locationTitle">London, United Kingdom</h2>
+<div class="current-weather-main">
+<div class="icon-main" id="weatherIcon"></div>
+<div>
+<div class="temp-main" id="tempMain"></div>
+<div id="conditionText"></div>
+<div class="feels-like-main" id="feelsLikeMain"></div>
+</div>
+</div>
+<div class="today-summary" id="todaySummary"></div>
+<div aria-label="Current weather details" class="weather-stats-grid" id="weatherStats"></div>
+<div id="updated"></div>
+<div aria-label="Forecast range controls" class="controls">
+<button id="btn-1" onclick="setDays(1)">1 Day</button>
+<button id="btn-3" onclick="setDays(3)">3 Day</button>
+<button id="btn-5" onclick="setDays(5)">5 Day</button>
+<button id="btn-7" onclick="setDays(7)">7 Day</button>
+<button id="btn-10" onclick="setDays(10)">10 Day</button>
+<button id="btn-14" onclick="setDays(14)">14 Day</button>
+</div>
+</div>
+</section>
+<section class="hourly-section">
+<div class="section-title">
+<h2>Next 12 Hours</h2>
+<span>Starts at the current London forecast hour</span>
+</div>
+<div class="hourly" id="hourly"></div>
+</section>
+<section class="forecast-section">
+<div class="section-title">
+<h2>Extended Forecast</h2>
+<span id="forecastLabel">7-day outlook</span>
+</div>
+<div class="forecast-grid" id="forecast"></div>
+</section>
+<div class="weather-note">
+Weather data is provided for informational purposes and may update throughout the day. Forecasts should be checked regularly during heavy rain, high wind, heat, flooding risk, poor visibility, rail disruption, aviation delays, or severe weather.
+</div>
+<section aria-labelledby="cgn-weather-live-title" class="cgn-weather-live" id="cgn-live-weather">
+<div class="section-title">
+<h2 id="cgn-weather-live-title">CGN LIVE</h2>
+<span>Weather and weekly forecast source panel</span>
+</div>
+<div class="cgn-weather-live-shell">
+<div class="cgn-weather-live-header">
+<div>
+<div class="cgn-weather-live-kicker"><span aria-hidden="true" class="cgn-weather-live-dot"></span> Live Video</div>
+<h2>CGN London Weather Center</h2>
+<p class="cgn-weather-live-subtitle">This player loads only the CGN Weekly Weather Brief from the main CGN Weather Center.</p>
+</div>
+<a class="cgn-weather-live-open" href="https://www.cgnnews.net/weather/weekly-weather-brief/" id="weather-cgn-live-open" rel="noopener" target="_blank">Open Weekly Weather Brief</a>
+</div>
+<div class="cgn-weather-live-video-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" id="weather-cgn-live-frame" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="CGN LIVE - London Weather"></iframe>
+<div aria-live="polite" class="cgn-weather-live-fallback" id="weather-cgn-live-fallback" role="status">
+<div class="cgn-weather-live-fallback-card">
+<img alt="" class="cgn-weather-live-fallback-image" id="weather-cgn-live-fallback-image" loading="lazy" src="/assets/CGNWeatherBrief01.png"/>
+<div>
+<strong id="weather-cgn-live-fallback-title">CGN London Weather Brief</strong>
+<p id="weather-cgn-live-fallback-text">Open the current source directly if the embedded player is unavailable on this device.</p>
+<div class="cgn-weather-live-fallback-actions">
+<a href="https://www.cgnnews.net/weather/weekly-weather-brief/" id="weather-cgn-live-fallback-link" rel="noopener" target="_blank">Open Weekly Weather Brief</a>
+<a href="/weather/" id="weather-cgn-live-coverage-link">Open CGN London Weather</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cgn-weather-live-meta">
+<p id="weather-cgn-live-now"><strong>Now showing:</strong> Weather — CGN Weekly Weather Brief</p>
+<p class="cgn-weather-live-disclaimer">CGN LIVE sources may include CGN embedded players, YouTube, and official or third-party source pages. Availability, embed permissions, and programming can change; open the live source if an embedded player does not load.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="weather-articles-title" class="weather-articles-section">
+<div class="section-title">
+<h2 id="weather-articles-title">London Weather News</h2>
+<span>Latest CGN London weather reporting</span>
+</div>
+<div class="weather-articles-grid" id="weatherArticles">
+<div class="weather-articles-empty">Loading London weather articles...</div>
+</div>
+</section>
+</main>
+<div id="cgn-london-footer"></div>
+<script src="/assets/london.js"></script>
+<script>
+const CGN_API_BASE = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+const BUREAU = "london";
+const LANG = "en";
+const PAGE = {"html_lang": "en-GB", "title": "London Weather | CGN London", "description": "London weather forecasts, current conditions, hourly updates, extended outlooks, rain and wind updates, and CGN Weekly Weather Brief coverage from CGN London.", "kicker": "CGN London Weather", "hero_title": "London Weather Center", "hero_text": "Live London conditions, hourly forecast, extended outlook, rain and wind updates, and CGN Weekly Weather Brief coverage using metric measurements for London readers.", "radar": "Weather Radar", "radar_small": "Open London weather warnings, rain tracking, flood alerts, and weather tools.", "weekly": "Weekly Weather Forecast", "weekly_small": "Watch the latest CGN Weekly Weather Brief for London and UK conditions.", "search": "Search city or place", "default_label": "London, United Kingdom", "next12": "Next 12 Hours", "next12_sub": "Starts at the current London forecast hour", "extended": "Extended Forecast", "weather_note": "Weather data is provided for informational purposes and may update throughout the day. Forecasts should be checked regularly during heavy rain, high wind, heat, flooding risk, poor visibility, rail disruption, aviation delays, or severe weather.", "live_span": "Weather and weekly forecast source panel", "live_title": "CGN London Weather Center", "live_sub": "This player loads only the CGN Weekly Weather Brief from the main CGN Weather Center.", "open_weekly": "Open Weekly Weather Brief", "radar_btn": "Radar", "weather_btn": "Weather", "sports_btn": "Sports", "now_showing": "Now showing:", "news_title": "London Weather News", "news_sub": "Latest CGN London weather reporting", "loading_articles": "Loading London weather articles...", "no_articles": "No London weather articles are available right now.", "articles_unavailable": "London weather articles are temporarily unavailable.", "data_unavailable": "Weather data is temporarily unavailable. Please try another location or refresh the page.", "connection_error": "Weather data is temporarily unavailable. Please check your connection and try again.", "forecast_label_suffix": "-day outlook", "today": "Today", "high": "High", "low": "Low", "wind": "Wind", "rain_chance": "Chance of rain", "feels": "Feels Like", "wind_speed": "Wind Speed", "wind_gusts": "Wind Gusts", "wind_direction": "Wind Direction", "humidity": "Humidity", "dew_point": "Dew Point", "pressure": "Pressure", "visibility": "Visibility", "cloud_cover": "Cloud Cover", "precipitation": "Precipitation", "uv_index": "UV Index", "sunrise": "Sunrise", "sunset": "Sunset", "last_updated": "Last Updated", "weather_articles_meta": "Weather", "locale": "en-GB"};
+
+let forecastDays = 7;
+let currentLat = 51.5072;
+let currentLon = -0.1276;
+let currentLabel = PAGE.default_label || "London, United Kingdom";
+
+function setActiveButton(){
+  [1,3,5,7,10,14].forEach(days => {
+    const btn = document.getElementById("btn-" + days);
+    if(btn) btn.classList.toggle("active", days === forecastDays);
+  });
+  const label = document.getElementById("forecastLabel");
+  if(label) label.innerText = forecastDays + PAGE.forecast_label_suffix;
+}
+
+function setDays(days){
+  forecastDays = days;
+  setActiveButton();
+  loadWeather(currentLat,currentLon,currentLabel);
+}
+
+function getWeather(code){
+  code = Number(code);
+  if(code === 0) return {icon:"☀️", text:"Clear", type:"clear", intensity:"light"};
+  if([1,2].includes(code)) return {icon:"🌤", text:"Partly Cloudy", type:"cloudy", intensity:"light"};
+  if(code === 3) return {icon:"☁️", text:"Cloudy", type:"cloudy", intensity:"moderate"};
+  if([45,48].includes(code)) return {icon:"🌫", text:"Fog", type:"fog", intensity: code === 48 ? "heavy" : "moderate"};
+  if([51,53,55].includes(code)) return {icon:"🌦", text:"Drizzle", type:"rain", intensity: code === 55 ? "moderate" : "light"};
+  if([56,57,66,67].includes(code)) return {icon:"🌧", text:"Freezing Precipitation", type:"sleet", intensity:"moderate"};
+  if([61,63,65,80,81,82].includes(code)) return {icon:"🌧", text:"Rain", type:"rain", intensity:[65,82].includes(code) ? "heavy" : "moderate"};
+  if([71,73,75,77,85,86].includes(code)) return {icon:"❄️", text:"Snow", type:"snow", intensity:[75,86].includes(code) ? "heavy" : "moderate"};
+  if([95,96,99].includes(code)) return {icon:"⛈", text:"Storm", type:"storm", intensity:[96,99].includes(code) ? "heavy" : "moderate"};
+  return {icon:"🌤", text:"Weather", type:"cloudy", intensity:"light"};
+}
+
+function setError(message){
+  const box = document.getElementById("weatherError");
+  if(!box) return;
+  box.style.display = message ? "block" : "none";
+  box.innerText = message || "";
+}
+
+function num(value){
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+function fmt(value, suffix, digits){
+  const n = num(value);
+  if(n === null) return "--";
+  const d = Number.isFinite(digits) ? digits : 0;
+  return `${n.toFixed(d)}${suffix || ""}`;
+}
+
+function fmtTemp(value){ return fmt(value,"°C",0); }
+function fmtPercent(value){ return fmt(value,"%",0); }
+function fmtPressure(value){ return fmt(value," hPa",0); }
+function fmtKm(value){ return fmt(value," km",1); }
+
+function formatCGNDate(value){
+  if(!value) return "";
+  const date = value instanceof Date ? value : new Date(value);
+  if(isNaN(date.getTime())) return "";
+  const parts = new Intl.DateTimeFormat(PAGE.locale || "en-GB", {
+    timeZone:"Europe/London",
+    weekday:"long",
+    day:"numeric",
+    month:"long",
+    year:"numeric",
+    hour:"numeric",
+    minute:"2-digit",
+    second:"2-digit",
+    hour12:true,
+    timeZoneName:"short"
+  }).formatToParts(date);
+  const map = {};
+  parts.forEach(function(part){ if(part.type !== "literal") map[part.type] = part.value; });
+  return `${map.weekday}, ${map.day} ${map.month} ${map.year} at ${map.hour}:${map.minute}:${map.second} ${map.dayPeriod} ${map.timeZoneName}`;
+}
+
+function fmtTime(value){
+  if(!value) return "--";
+  return new Date(value).toLocaleTimeString(PAGE.locale || "en-GB",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Europe/London"});
+}
+
+function fmtForecastDate(value){
+  if(!value) return "--";
+  return new Date(String(value) + "T12:00:00").toLocaleDateString(PAGE.locale || "en-GB",{weekday:"short",month:"short",day:"numeric",timeZone:"Europe/London"});
+}
+
+function fmtForecastHour(value){
+  if(!value) return "--";
+  return new Date(value).toLocaleTimeString(PAGE.locale || "en-GB",{hour:"numeric",hour12:true});
+}
+
+function windDirectionText(deg){
+  const n = num(deg);
+  if(n === null) return "--";
+  const dirs = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","WNW","NW","NNW"];
+  return dirs[Math.round(n / 22.5) % 16];
+}
+
+function isNightTime(currentTime, sunrise, sunset){
+  if(!currentTime || !sunrise || !sunset) return false;
+  const now = new Date(currentTime).getTime();
+  const rise = new Date(sunrise).getTime();
+  const set = new Date(sunset).getTime();
+  if([now,rise,set].some(v => isNaN(v))) return false;
+  return now < rise || now >= set;
+}
+
+function nearestHourlyIndex(times,target){
+  if(!Array.isArray(times) || !times.length) return 0;
+  const targetTime = target ? new Date(target).getTime() : Date.now();
+  let bestIndex = 0;
+  let bestDiff = Infinity;
+  times.forEach((t,i)=>{
+    const diff = Math.abs(new Date(t).getTime() - targetTime);
+    if(diff < bestDiff){ bestDiff = diff; bestIndex = i; }
+  });
+  return bestIndex;
+}
+
+function currentHourlyStartIndex(times,currentTime){
+  if(!Array.isArray(times) || !times.length) return 0;
+  const base = currentTime ? new Date(currentTime) : new Date();
+  if(isNaN(base.getTime())) return nearestHourlyIndex(times,currentTime);
+  base.setMinutes(0,0,0);
+  const target = base.getTime();
+  for(let i=0;i<times.length;i++){
+    const t = new Date(times[i]).getTime();
+    if(!isNaN(t) && t >= target) return i;
+  }
+  return Math.max(0,times.length - 12);
+}
+
+function getCurrentDailyIndex(dailyTimes,currentTime){
+  if(!Array.isArray(dailyTimes) || !dailyTimes.length) return 0;
+  const currentLocalDate = String(currentTime || "").slice(0,10);
+  if(currentLocalDate){
+    const exactIndex = dailyTimes.findIndex(day => String(day || "").slice(0,10) === currentLocalDate);
+    if(exactIndex >= 0) return exactIndex;
+  }
+  return 0;
+}
+
+function setWeatherMood(type,options){
+  const panel = document.querySelector(".current-weather");
+  const effects = document.getElementById("weatherEffects");
+  if(!panel || !effects) return;
+  options = options || {};
+  const intensity = options.intensity || "moderate";
+  const isNight = !!options.isNight;
+  panel.classList.remove("weather-clear","weather-cloudy","weather-rain","weather-snow","weather-fog","weather-storm","weather-sleet","weather-night");
+  panel.classList.add("weather-" + (type || "cloudy"));
+  panel.classList.toggle("weather-night", isNight);
+  effects.innerHTML = "";
+
+  if(type === "cloudy" || type === "storm"){
+    const cloudCount = type === "storm" ? 5 : 4;
+    for(let i=0;i<cloudCount;i++){
+      const cloud = document.createElement("span");
+      cloud.className = "cloud-puff";
+      cloud.style.top = (12 + Math.random() * 46) + "%";
+      cloud.style.left = (-35 + Math.random() * 25) + "%";
+      cloud.style.width = (160 + Math.random() * 140) + "px";
+      cloud.style.height = (42 + Math.random() * 46) + "px";
+      cloud.style.animationDuration = (26 + Math.random() * 22) + "s";
+      cloud.style.animationDelay = (-Math.random() * 30) + "s";
+      effects.appendChild(cloud);
+    }
+  }
+
+  if(type === "fog"){
+    for(let i=0;i<5;i++){
+      const fog = document.createElement("span");
+      fog.className = "fog-bank";
+      fog.style.top = (8 + i * 16) + "%";
+      fog.style.animationDuration = (18 + i * 5) + "s";
+      fog.style.animationDelay = (-i * 5) + "s";
+      fog.style.opacity = String(0.32 + i * 0.06);
+      effects.appendChild(fog);
+    }
+  }
+
+  if(type === "rain" || type === "storm"){
+    const count = type === "storm" || intensity === "heavy" ? 116 : 78;
+    for(let i=0;i<count;i++){
+      const drop = document.createElement("span");
+      drop.className = "raindrop" + ((type === "storm" || intensity === "heavy") ? " heavy" : "");
+      drop.style.left = Math.random() * 100 + "%";
+      drop.style.animationDuration = (0.55 + Math.random() * 0.85) + "s";
+      drop.style.animationDelay = (-Math.random() * 2.4) + "s";
+      drop.style.opacity = (0.34 + Math.random() * 0.62).toFixed(2);
+      effects.appendChild(drop);
+    }
+  }
+
+  if(type === "sleet"){
+    for(let i=0;i<70;i++){
+      const pellet = document.createElement("span");
+      pellet.className = "sleet-pellet";
+      pellet.style.left = Math.random() * 100 + "%";
+      pellet.style.animationDuration = (0.8 + Math.random() * 1.2) + "s";
+      pellet.style.animationDelay = (-Math.random() * 2.5) + "s";
+      pellet.style.opacity = (0.42 + Math.random() * 0.5).toFixed(2);
+      effects.appendChild(pellet);
+    }
+  }
+
+  if(type === "snow"){
+    const count = intensity === "heavy" ? 82 : 54;
+    for(let i=0;i<count;i++){
+      const flake = document.createElement("span");
+      flake.className = "snowflake";
+      const size = 3 + Math.random() * 7;
+      flake.style.left = Math.random() * 100 + "%";
+      flake.style.width = size + "px";
+      flake.style.height = size + "px";
+      flake.style.animationDuration = (5 + Math.random() * 7) + "s";
+      flake.style.animationDelay = (-Math.random() * 8) + "s";
+      flake.style.opacity = (0.45 + Math.random() * 0.5).toFixed(2);
+      effects.appendChild(flake);
+    }
+  }
+}
+
+function renderStat(label,value){
+  return `<div class="weather-stat-card"><span>${label}</span><strong>${value || "--"}</strong></div>`;
+}
+
+async function loadWeather(lat,lon,label){
+  currentLat = lat;
+  currentLon = lon;
+  currentLabel = label;
+  setError("");
+
+  try{
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,dew_point_2m,precipitation_probability,precipitation,weather_code,cloud_cover,visibility,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,wind_gusts_10m_max,uv_index_max,sunrise,sunset&forecast_days=14&temperature_unit=celsius&wind_speed_unit=kmh&precipitation_unit=mm&timezone=Europe%2FLondon`,
+      {cache:"no-store"}
+    );
+
+    const data = await res.json();
+
+    if(!data || !data.current || !data.hourly || !data.daily){
+      setError(PAGE.data_unavailable);
+      return;
+    }
+
+    const current = data.current;
+    const currentIndex = nearestHourlyIndex(data.hourly.time,current.time);
+    const todayDailyIndex = getCurrentDailyIndex(data.daily.time,current.time);
+    const w = getWeather(current.weather_code);
+
+    const currentTemp = num(current.temperature_2m);
+    const feelsLike = current.apparent_temperature ?? (data.hourly.apparent_temperature ? data.hourly.apparent_temperature[currentIndex] : null);
+    const humidity = current.relative_humidity_2m ?? (data.hourly.relative_humidity_2m ? data.hourly.relative_humidity_2m[currentIndex] : null);
+    const dewPoint = data.hourly.dew_point_2m ? data.hourly.dew_point_2m[currentIndex] : null;
+    const rainChance = data.hourly.precipitation_probability ? data.hourly.precipitation_probability[currentIndex] : null;
+    const precip = current.precipitation ?? (data.hourly.precipitation ? data.hourly.precipitation[currentIndex] : null);
+    const pressure = current.pressure_msl ?? (data.hourly.pressure_msl ? data.hourly.pressure_msl[currentIndex] : null);
+    const visibilityMeters = data.hourly.visibility ? data.hourly.visibility[currentIndex] : null;
+    const visibilityKm = num(visibilityMeters) === null ? null : num(visibilityMeters) / 1000;
+    const cloudCover = current.cloud_cover ?? (data.hourly.cloud_cover ? data.hourly.cloud_cover[currentIndex] : null);
+    const windSpeed = current.wind_speed_10m ?? (data.hourly.wind_speed_10m ? data.hourly.wind_speed_10m[currentIndex] : null);
+    const windDirection = current.wind_direction_10m ?? (data.hourly.wind_direction_10m ? data.hourly.wind_direction_10m[currentIndex] : null);
+    const windGusts = current.wind_gusts_10m ?? (data.hourly.wind_gusts_10m ? data.hourly.wind_gusts_10m[currentIndex] : null);
+
+    const nightMode = isNightTime(current.time, data.daily.sunrise ? data.daily.sunrise[todayDailyIndex] : null, data.daily.sunset ? data.daily.sunset[todayDailyIndex] : null);
+    setWeatherMood(w.type,{intensity:w.intensity,isNight:nightMode});
+
+    document.getElementById("locationTitle").innerText = label;
+    document.getElementById("weatherIcon").innerText = w.icon;
+    document.getElementById("conditionText").innerText = w.text;
+    document.getElementById("tempMain").innerText = fmtTemp(currentTemp);
+    document.getElementById("feelsLikeMain").innerText = PAGE.feels + " " + fmtTemp(feelsLike);
+
+    const todayMax = data.daily.temperature_2m_max ? data.daily.temperature_2m_max[todayDailyIndex] : null;
+    const todayMin = data.daily.temperature_2m_min ? data.daily.temperature_2m_min[todayDailyIndex] : null;
+    const todayRainChance = data.daily.precipitation_probability_max ? data.daily.precipitation_probability_max[todayDailyIndex] : rainChance;
+    const todayWind = data.daily.wind_speed_10m_max ? data.daily.wind_speed_10m_max[todayDailyIndex] : windSpeed;
+
+    document.getElementById("todaySummary").innerText =
+      `${PAGE.today}: ${w.text}. ${PAGE.high} ${fmtTemp(todayMax)} / ${PAGE.low} ${fmtTemp(todayMin)}. ${PAGE.wind} ${windDirectionText(windDirection)} at ${fmt(todayWind," km/h",0)}. ${PAGE.rain_chance} ${fmtPercent(todayRainChance)}.`;
+
+    const stats = document.getElementById("weatherStats");
+    stats.innerHTML =
+      renderStat(PAGE.feels, fmtTemp(feelsLike)) +
+      renderStat(PAGE.wind_speed, `${fmt(windSpeed," km/h",0)} ${windDirectionText(windDirection)}`) +
+      renderStat(PAGE.wind_gusts, fmt(windGusts," km/h",0)) +
+      renderStat(PAGE.wind_direction, windDirectionText(windDirection)) +
+      renderStat(PAGE.humidity, fmtPercent(humidity)) +
+      renderStat(PAGE.dew_point, fmtTemp(dewPoint)) +
+      renderStat(PAGE.pressure, fmtPressure(pressure)) +
+      renderStat(PAGE.visibility, fmtKm(visibilityKm)) +
+      renderStat(PAGE.cloud_cover, fmtPercent(cloudCover)) +
+      renderStat(PAGE.rain_chance, fmtPercent(rainChance)) +
+      renderStat(PAGE.precipitation, fmt(precip," mm",1)) +
+      renderStat(PAGE.uv_index, data.daily.uv_index_max ? fmt(data.daily.uv_index_max[todayDailyIndex],"",1) : "--") +
+      renderStat(PAGE.sunrise, data.daily.sunrise ? fmtTime(data.daily.sunrise[todayDailyIndex]) : "--") +
+      renderStat(PAGE.sunset, data.daily.sunset ? fmtTime(data.daily.sunset[todayDailyIndex]) : "--");
+
+    document.getElementById("updated").innerText = PAGE.last_updated + ": " + formatCGNDate(new Date());
+
+    const hourly = document.getElementById("hourly");
+    hourly.innerHTML = "";
+    const hourlyStartIndex = currentHourlyStartIndex(data.hourly.time,current.time);
+    const hourlyTimes = data.hourly.time.slice(hourlyStartIndex,hourlyStartIndex + 12);
+
+    hourlyTimes.forEach((t,offset)=>{
+      const i = hourlyStartIndex + offset;
+      const hw = getWeather(data.hourly.weather_code[i]);
+      const temp = data.hourly.temperature_2m[i];
+      const hourlyFeels = data.hourly.apparent_temperature ? data.hourly.apparent_temperature[i] : null;
+      const hourlyRain = data.hourly.precipitation_probability ? data.hourly.precipitation_probability[i] : null;
+      const hourlyWind = data.hourly.wind_speed_10m ? data.hourly.wind_speed_10m[i] : null;
+
+      hourly.innerHTML += `
+        <div class="hour">
+          <strong>${fmtForecastHour(t)}</strong><br>
+          <div class="hour-icon">${hw.icon}</div>
+          <div class="hour-temp">${fmtTemp(temp)}</div>
+          <div class="hour-detail">${PAGE.feels} ${fmtTemp(hourlyFeels)}</div>
+          <div class="hour-detail">${PAGE.rain_chance} ${fmtPercent(hourlyRain)}</div>
+          <div class="hour-detail">${PAGE.wind} ${fmt(hourlyWind," km/h",0)}</div>
+        </div>
+      `;
+    });
+
+    const forecast = document.getElementById("forecast");
+    forecast.innerHTML = "";
+
+    data.daily.time.slice(todayDailyIndex,todayDailyIndex + forecastDays).forEach((d,offset)=>{
+      const i = todayDailyIndex + offset;
+      const dw = getWeather(data.daily.weather_code[i]);
+      const max = data.daily.temperature_2m_max[i];
+      const min = data.daily.temperature_2m_min[i];
+      const dailyRain = data.daily.precipitation_probability_max ? data.daily.precipitation_probability_max[i] : null;
+      const dailyWind = data.daily.wind_speed_10m_max ? data.daily.wind_speed_10m_max[i] : null;
+      const dailyUv = data.daily.uv_index_max ? data.daily.uv_index_max[i] : null;
+      const sunrise = data.daily.sunrise ? data.daily.sunrise[i] : null;
+      const sunset = data.daily.sunset ? data.daily.sunset[i] : null;
+      const dailyPrecip = data.daily.precipitation_sum ? data.daily.precipitation_sum[i] : null;
+
+      forecast.innerHTML += `
+        <div class="card">
+          <strong>${fmtForecastDate(d)}</strong>
+          <div style="font-size:30px;margin:8px 0;">${dw.icon}</div>
+          <div class="forecast-condition">${dw.text}</div>
+          <div class="forecast-high-low">${fmtTemp(max)} / ${fmtTemp(min)}</div>
+          <div class="forecast-detail">
+            ${PAGE.rain_chance}: ${fmtPercent(dailyRain)}<br>
+            ${PAGE.wind}: ${fmt(dailyWind," km/h",0)}<br>
+            ${PAGE.uv_index}: ${fmt(dailyUv,"",1)}<br>
+            ${PAGE.precipitation}: ${fmt(dailyPrecip," mm",1)}<br>
+            ${PAGE.sunrise}: ${fmtTime(sunrise)}<br>
+            ${PAGE.sunset}: ${fmtTime(sunset)}
+          </div>
+        </div>
+      `;
+    });
+
+    setActiveButton();
+
+  }catch(err){
+    console.error("LONDON WEATHER LOAD ERROR:",err);
+    setError(PAGE.connection_error);
+  }
+}
+
+let suggestionTimer = null;
+
+function suggestLocation(){
+  clearTimeout(suggestionTimer);
+  suggestionTimer = setTimeout(async function(){
+    const input = document.getElementById("locationInput");
+    const suggestions = document.getElementById("suggestions");
+    const q = input.value.trim();
+
+    if(q.length < 2){
+      suggestions.innerHTML = "";
+      return;
+    }
+
+    try{
+      const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=5&language=en`);
+      const data = await res.json();
+      suggestions.innerHTML = "";
+
+      if(!data.results) return;
+
+      data.results.forEach(loc=>{
+        const label = `${loc.name}, ${loc.admin1 || ""} ${loc.country}`.replace(/\s+/g," ").trim();
+        const div = document.createElement("div");
+        div.innerText = label;
+        div.onclick = ()=>{
+          input.value = label;
+          suggestions.innerHTML = "";
+          loadWeather(loc.latitude,loc.longitude,label);
+        };
+        suggestions.appendChild(div);
+      });
+    }catch(err){
+      console.error("LOCATION SUGGEST ERROR:",err);
+    }
+  },250);
+}
+
+function safeText(value){
+  return String(value || "").replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];
+  });
+}
+
+function slugify(value){
+  return String(value || "").toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-+|-+$/g,"");
+}
+
+function getArticleTime(article){
+  if(!article) return 0;
+  const directDate = article.published_at || article.updated_at || article.date || article.created_at || "";
+  if(directDate){
+    const parsed = new Date(directDate).getTime();
+    if(!isNaN(parsed)) return parsed;
+  }
+  return 0;
+}
+
+function buildWeatherArticleUrl(article){
+  const existingUrl = String(article.url || article.canonical_url || "").trim();
+  if(existingUrl){
+    let pathOnly = existingUrl.replace(/^https?:\/\/[^/]+/i,"");
+    if(pathOnly.indexOf("/" + LANG + "/news/") === 0 || pathOnly.indexOf("/" + LANG + "/weather/") === 0){
+      return pathOnly.endsWith("/") ? pathOnly : pathOnly + "/";
+    }
+  }
+  const slug = slugify(article.slug || article.title || "weather-story");
+  const time = getArticleTime(article);
+  const date = time ? new Date(time) : new Date();
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2,"0");
+  const day = String(date.getUTCDate()).padStart(2,"0");
+  return `/${LANG}/news/${year}/${month}/${day}/${slug}/`;
+}
+
+function formatArticleDate(article){
+  const time = getArticleTime(article);
+  if(!time) return "";
+  return formatCGNDate(new Date(time));
+}
+
+async function loadWeatherArticles(){
+  const mount = document.getElementById("weatherArticles");
+  if(!mount) return;
+
+  try{
+    async function readArticlesFrom(url){
+      const response = await fetch(url,{cache:"no-store"});
+      const json = await response.json();
+      if(Array.isArray(json)) return json;
+      if(Array.isArray(json.articles)) return json.articles;
+      if(json && json.success && Array.isArray(json.data)) return json.data;
+      if(json && json.success && Array.isArray(json.items)) return json.items;
+      return [];
+    }
+
+    let articles = await readArticlesFrom(`${CGN_API_BASE}?action=london_articles&bureau=london&language=${encodeURIComponent(LANG)}&category=Weather&limit=6&format=paged`);
+
+    if(!articles.length){
+      const allArticles = await readArticlesFrom(`${CGN_API_BASE}?action=london_articles&bureau=london&language=${encodeURIComponent(LANG)}&limit=60&format=paged`);
+      articles = allArticles.filter(function(article){
+        return slugify(article.category || "") === "weather";
+      }).slice(0,6);
+    }
+
+    if(!articles.length){
+      mount.innerHTML = `<div class="weather-articles-empty">${safeText(PAGE.no_articles)}</div>`;
+      return;
+    }
+
+    mount.innerHTML = "";
+
+    articles.forEach(function(article){
+      const title = safeText(article.title || "Weather Update");
+      const summary = safeText(article.summary || article.subtitle || "");
+      const image = safeText(article.hero_image_url || article.image || "/assets/CGNWeatherBrief01.png");
+      const author = safeText(article.author || "CGN London");
+      const date = safeText(formatArticleDate(article));
+      const url = buildWeatherArticleUrl(article);
+
+      mount.insertAdjacentHTML("beforeend", `
+        <a class="weather-article-card" href="${url}" aria-label="Read ${title}">
+          <img src="${image}" alt="${title}" loading="lazy">
+          <div class="weather-article-body">
+            <div class="weather-article-meta">${safeText(PAGE.weather_articles_meta)} • ${author}${date ? " • " + date : ""}</div>
+            <h3>${title}</h3>
+            <p>${summary}</p>
+          </div>
+        </a>
+      `);
+    });
+
+  }catch(err){
+    console.error("LONDON WEATHER ARTICLES ERROR:",err);
+    mount.innerHTML = `<div class="weather-articles-empty">${safeText(PAGE.articles_unavailable)}</div>`;
+  }
+}
+
+const WEATHER_CGN_LIVE_FEEDS = {
+  weather:{
+    label:PAGE.weather_btn,
+    source:"CGN Weekly Weather Brief",
+    title:"CGN Weekly Weather Brief",
+    embed:"https://www.cgnnews.net/weather/weekly-weather-brief/?embed=1&muted=1",
+    sourceUrl:"https://www.cgnnews.net/weather/weekly-weather-brief/",
+    directoryUrl:"https://www.cgnnews.net/weather/weekly-weather-brief/",
+    coverageUrl:`/${LANG}/weather/`,
+    fallbackImage:"/assets/CGNWeatherBrief01.png",
+    fallbackTitle:"CGN Weekly Weather Brief",
+    fallbackText:"Open the CGN Weekly Weather Brief directly if the embedded player is unavailable."
+  }
+};
+
+function withWeatherCGNLiveParams(url){
+  return String(url || "").replace(/([?&])autoplay=[^&]*/g, "").replace(/([?&])mute=[^&]*/g, "") + (String(url || "").indexOf("?") === -1 ? "?" : "&") + "autoplay=0&mute=1";
+}
+
+function changeWeatherCGNLive(key){
+  const feed = WEATHER_CGN_LIVE_FEEDS.weather;
+  const frame = document.getElementById("weather-cgn-live-frame");
+  const fallback = document.getElementById("weather-cgn-live-fallback");
+  const open = document.getElementById("weather-cgn-live-open");
+  const now = document.getElementById("weather-cgn-live-now");
+  const fallbackLink = document.getElementById("weather-cgn-live-fallback-link");
+  const coverageLink = document.getElementById("weather-cgn-live-coverage-link");
+  const fallbackTitle = document.getElementById("weather-cgn-live-fallback-title");
+  const fallbackText = document.getElementById("weather-cgn-live-fallback-text");
+  const fallbackImage = document.getElementById("weather-cgn-live-fallback-image");
+
+  if(open){
+    open.href = feed.sourceUrl;
+    open.textContent = PAGE.open_weekly;
+  }
+
+  if(now){
+    now.innerHTML = "<strong>" + safeText(PAGE.now_showing) + "</strong> " + safeText(feed.label) + " — " + safeText(feed.source);
+  }
+
+  if(fallbackLink) fallbackLink.href = feed.sourceUrl;
+  if(coverageLink) coverageLink.href = feed.coverageUrl || "/";
+  if(fallbackTitle) fallbackTitle.textContent = feed.fallbackTitle;
+  if(fallbackText) fallbackText.textContent = feed.fallbackText;
+  if(fallbackImage) fallbackImage.src = feed.fallbackImage || "/assets/CGNWeatherBrief01.png";
+
+  if(frame){
+    frame.title = feed.title || "CGN Weekly Weather Brief";
+    frame.style.display = "block";
+    frame.src = withWeatherCGNLiveParams(feed.embed);
+    if(fallback) fallback.classList.remove("show");
+  }
+}
+
+setActiveButton();
+loadWeather(currentLat,currentLon,currentLabel);
+changeWeatherCGNLive("weather");
+loadWeatherArticles();
+
+function scheduleMidnightWeatherRefresh(){
+  const now = new Date();
+  const nextMidnight = new Date(now);
+  nextMidnight.setHours(24,0,5,0);
+  setTimeout(function(){
+    loadWeather(currentLat,currentLon,currentLabel);
+    scheduleMidnightWeatherRefresh();
+  },Math.max(1000,nextMidnight.getTime() - now.getTime()));
+}
+scheduleMidnightWeatherRefresh();
+</script>
+<script defer="" src="/assets/js/cgn-bureau-v106.js"></script>
+</body>
+</html>
