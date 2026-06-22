@@ -861,7 +861,7 @@
             <h3 class="london-live-feature-title">Checking Articles</h3>
             <p class="london-live-feature-copy">Looking for recent London Articles.</p>
             <div class="london-live-feature-statline">
-              <span>Articles Sheet</span><span>London</span><span>Story Rotation</span>
+              <span>London</span><span>London</span><span>Story Rotation</span>
             </div>
             <div class="london-live-actions">
               <a class="london-live-btn" href="/">Latest News</a>
@@ -1044,7 +1044,7 @@
       const url=safeHref(buildArticleUrl(article));
       const image=articleImage(article);
       const labelText=safeText(label||"London Live Story");
-      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="${image}" alt="" loading="lazy" onerror="this.src='/assets/CGNWebBanner01.png';"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">${labelText} · ${category} · ${date}</div><h3 class="london-live-feature-title">${title}</h3><p class="london-live-feature-copy">${copy}</p><div class="london-live-feature-statline"><span>Articles Sheet</span><span>London Dateline</span><span>${category}</span></div></div><div><div class="london-live-actions"><a class="london-live-btn" href="${url}">Read Article</a><a class="london-live-btn secondary" href="/weather/">London Weather</a><a class="london-live-btn secondary" href="/sports/">London Sports</a></div><div class="london-feature-rotation-controls" aria-label="London story rotation controls"><div class="london-feature-control-row"><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(-1)">Previous</button><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(1)">Next</button></div><div class="london-feature-counter">Story ${current} of ${total}</div><div class="london-feature-progress" aria-hidden="true"><span></span></div></div></div></div>`;
+      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="${image}" alt="" loading="lazy" onerror="this.src='/assets/CGNWebBanner01.png';"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">${labelText} · ${category} · ${date}</div><h3 class="london-live-feature-title">${title}</h3><p class="london-live-feature-copy">${copy}</p><div class="london-live-feature-statline"><span>London</span><span>Dateline</span><span>${category}</span></div></div><div><div class="london-live-actions"><a class="london-live-btn" href="${url}">Read Article</a><a class="london-live-btn secondary" href="/weather/">London Weather</a><a class="london-live-btn secondary" href="/sports/">London Sports</a></div><div class="london-feature-rotation-controls" aria-label="London story rotation controls"><div class="london-feature-control-row"><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(-1)">Previous</button><button class="london-feature-control-btn" type="button" onclick="changeLondonFeature(1)">Next</button></div><div class="london-feature-counter">Story ${current} of ${total}</div><div class="london-feature-progress" aria-hidden="true"><span></span></div></div></div></div>`;
     }
 
     function renderFeatureFallback(message){
