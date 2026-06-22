@@ -838,7 +838,7 @@
         <div>
           <p class="london-live-kicker">Live Bureau Desk</p>
           <h2 id="london-live-title" class="london-live-title">CGN LIVE London</h2>
-          <p class="london-live-copy">London-dateline CGN reporting from the Articles sheet, metric London weather, and local sports links in one broadcast-style dashboard.</p>
+          <p class="london-live-copy">London-dateline CGN reporting covering London & Europe.</p>
         </div>
         <div class="london-live-actions" aria-label="Primary London live actions">
           <a class="london-live-btn" href="/">Latest News</a>
@@ -857,11 +857,11 @@
             </div>
           </div>
           <div class="london-live-feature-content">
-            <div class="london-live-feature-meta">London Dateline · Last 72 Hours</div>
-            <h3 class="london-live-feature-title">Checking the Articles sheet</h3>
-            <p class="london-live-feature-copy">Looking for recent LONDON-dateline articles from the Articles sheet.</p>
+            <div class="london-live-feature-meta">London · Last 72 Hours</div>
+            <h3 class="london-live-feature-title">Checking Articles</h3>
+            <p class="london-live-feature-copy">Looking for recent London Articles.</p>
             <div class="london-live-feature-statline">
-              <span>Articles Sheet</span><span>London Dateline</span><span>Story Rotation</span>
+              <span>Articles Sheet</span><span>London</span><span>Story Rotation</span>
             </div>
             <div class="london-live-actions">
               <a class="london-live-btn" href="/">Latest News</a>
@@ -1050,14 +1050,14 @@
     function renderFeatureFallback(message){
       const mount=document.getElementById("london-live-feature");
       if(!mount)return;
-      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="/assets/CGNWebBanner01.png" alt="" loading="lazy"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">Latest from CGN Articles</div><h3 class="london-live-feature-title">London coverage is loading</h3><p class="london-live-feature-copy">${safeText(message||"No London-dateline articles from the past 72 hours are available right now.")}</p><div class="london-live-feature-statline"><span>72-Hour London Filter</span><span>Articles Sheet</span></div></div><div class="london-live-actions"><a class="london-live-btn" href="/">Latest News</a><a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a></div></div>`;
+      mount.innerHTML=`<div class="london-live-feature-media" aria-hidden="true"><img src="/assets/CGNWebBanner01.png" alt="" loading="lazy"></div><div class="london-live-feature-content"><div><div class="london-live-feature-meta">Latest from CGN Articles</div><h3 class="london-live-feature-title">London coverage is loading</h3><p class="london-live-feature-copy">${safeText(message||"No London-dateline articles from the past 72 hours are available right now.")}</p><div class="london-live-feature-statline"><span>72-Hour London Filter</span><span>London</span></div></div><div class="london-live-actions"><a class="london-live-btn" href="/">Latest News</a><a class="london-live-btn secondary" href="https://www.cgnnews.net/" target="_blank" rel="noopener">CGN News</a></div></div>`;
     }
 
     function renderLatestList(items){
       const mount=document.getElementById("london-latest-list");
       if(!mount)return;
       if(!items.length){
-        mount.innerHTML='<p class="london-status">No London-dateline articles from the past 72 hours are available right now.</p>';
+        mount.innerHTML='<p class="london-status">No London Articles from the past 72 hours are available right now.</p>';
         return;
       }
       mount.innerHTML=items.slice(0,12).map(function(article){
@@ -1089,7 +1089,7 @@
       londonLiveStories=Array.isArray(items)?items.filter(Boolean):[];
       londonLiveIndex=0;
       if(!londonLiveStories.length){
-        renderFeatureFallback("No London-dateline articles from the past 72 hours are available right now.");
+        renderFeatureFallback("No London Articles from the past 72 hours are available right now.");
         renderLatestList([]);
         return;
       }
