@@ -1,7 +1,7 @@
 (function(){
 
-  // CGN Shell v8.3.3-Alpha
-  // 15 May 2026 • account modal safety fix
+  // CGN London Shell v8.3.4-Alpha
+  // 25 June 2026 • CGN NOW / iOS header icon update; account modal safety fix
   // Developed by Cook Technology Services
   // Site-wide backend configuration.
   // Store the deployed Apps Script Web App URL in Admin Column K as:
@@ -783,6 +783,19 @@ function getShellLoginInput_(id){
     `;
   }
 
+  function iosAppIconHtml(){
+    return `
+      <a href="https://www.cgnnews.net/ios/" class="cgn-ios-app-link" aria-label="Get the CGN NOW iOS app">
+        <span class="cgn-ios-app-phone" aria-hidden="true">
+          <span class="cgn-ios-app-notch"></span>
+          <span class="cgn-ios-app-word">iOS</span>
+          <span class="cgn-ios-app-home"></span>
+        </span>
+        <span class="cgn-ios-app-text">Get the iOS App</span>
+      </a>
+    `;
+  }
+
   function renderHeader(){
     const mount = document.getElementById("cgn-site-header");
     if(!mount) return;
@@ -877,6 +890,7 @@ function getShellLoginInput_(id){
             </svg>
           </a>
 
+          ${iosAppIconHtml()}
           ${editorPenHtml()}
 
         </div>
@@ -1337,6 +1351,73 @@ function getShellLoginInput_(id){
         display:block;
         transition:opacity .2s ease;
       }
+
+      .cgn-ios-app-link {
+        width:26px;
+        height:36px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        color:#111;
+        text-decoration:none;
+        flex:0 0 auto;
+        transition:opacity .2s ease;
+      }
+
+      .cgn-ios-app-link:hover {
+        opacity:.72;
+        text-decoration:none;
+      }
+
+      .cgn-ios-app-phone {
+        position:relative;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:23px;
+        height:32px;
+        flex:0 0 23px;
+        border:2px solid #111;
+        border-radius:7px;
+        background:radial-gradient(circle at 50% 42%, rgba(83,213,255,.18), transparent 46%), linear-gradient(180deg, rgba(7,17,31,.06), rgba(7,17,31,.02));
+        box-shadow:inset 0 0 0 1px rgba(7,17,31,.10);
+      }
+
+      .cgn-ios-app-notch {
+        position:absolute;
+        top:3px;
+        left:50%;
+        width:9px;
+        height:2px;
+        border-radius:999px;
+        background:#111;
+        transform:translateX(-50%);
+      }
+
+      .cgn-ios-app-word {
+        display:block;
+        margin-top:1px;
+        color:#111;
+        font-family:Arial Black, Arial, Helvetica, sans-serif;
+        font-size:7px;
+        font-weight:900;
+        line-height:1;
+        letter-spacing:-.02em;
+      }
+
+      .cgn-ios-app-home {
+        position:absolute;
+        bottom:3px;
+        left:50%;
+        width:4px;
+        height:4px;
+        border-radius:999px;
+        background:#c40000;
+        transform:translateX(-50%);
+        box-shadow:0 0 0 1px rgba(7,17,31,.42);
+      }
+
+      .cgn-ios-app-text { display:none; }
 
       .social-icon:hover { opacity:.65; }
 
@@ -2127,6 +2208,7 @@ function getShellLoginInput_(id){
         .right-tools > a[aria-label="CGN News on Instagram"],
         .right-tools > a[aria-label="CGN News on X"],
         .right-tools > a[aria-label="CGN News on YouTube"],
+        .right-tools > a.cgn-ios-app-link,
         .right-tools > a.editor-portal-link {
           flex:1 1 0;
           min-width:0;
@@ -2156,6 +2238,28 @@ function getShellLoginInput_(id){
           justify-content:center;
           line-height:1;
           letter-spacing:-.01em;
+        }
+
+        .cgn-ios-app-link {
+          order:3;
+          flex:1 1 0;
+          min-width:0;
+          min-height:32px;
+          margin:0;
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          gap:6px;
+        }
+
+        .cgn-ios-app-phone {
+          width:20px;
+          height:28px;
+          flex-basis:20px;
+        }
+
+        .cgn-ios-app-text {
+          display:none !important;
         }
 
         .editor-portal-link {
