@@ -1,15 +1,15 @@
 [CGN-London-README.md](https://github.com/user-attachments/files/29234606/CGN-London-README.md)
 <img src="CGNNewsLogo01.png" alt="CGN News" width="240">
 
-# CGN London Subdomain v1.0.0 Alpha
+# CGN London Subdomain v1.1.0 Alpha
 
 **Plain-English + Technical README / Operating Manual**  
 CGN News Subdomain | Static GitHub Pages Site | London & Europe | CGN Brand Identity | Public Landing Page | Site Manifest | SEO | Robots | Sitemap | 404 Page | Static Assets | Main-Site Navigation | Cook Technology Services
 
-**Updated:** 23 June 2026 • 05:00:49Z UTC  
-**Subdomain Build Stamp:** 23 June 2026 • 05:00:49Z UTC | Developed by Cook Technology Services  
-**Subdomain Version:** `CGN LONDON SUBDOMAIN v1.0.0 Alpha`  
-**Subdomain Slug:** `cgn-london-subdomain-v1.0.0-alpha`  
+**Updated:** 25 June 2026 • 19:50:00Z UTC
+**Subdomain Build Stamp:** 25 June 2026 • 19:50:00Z UTC | Developed by Cook Technology Services  
+**Subdomain Version:** `CGN LONDON SUBDOMAIN v1.1.0 Alpha`  
+**Subdomain Slug:** `cgn-london-subdomain-v1.1.0-alpha`  
 **Repository:** `CookInternational/CGN-London`  
 **Site:** https://london.cgnnews.net  
 **Production Domain:** `london.cgnnews.net`
@@ -22,9 +22,9 @@ tips@cgnnews.net | www.cgnnews.net | +1 (317) 442-1437 | Copyright © 2026 | CGN
 
 ---
 
-## What's Changed in v1.0.0 Alpha?
+## What's Changed in v1.1.0 Alpha?
 
-v1.0.0 Alpha locks `CookInternational/CGN-London` as the public CGN News subdomain repository for **London & Europe**.
+v1.1.0 Alpha Added CGN mobile iOS icon. locks `CookInternational/CGN-London` as the public CGN News subdomain repository for **London & Europe**.
 
 This repository is a static bureau-team presentation layer for CGN News. It supports regional identity, reporter attribution, and navigation back to the main CGN News network without becoming a bureau article CMS.
 
@@ -43,7 +43,7 @@ This repository is a static bureau-team presentation layer for CGN News. It supp
 
 ## 1. Executive Summary
 
-CGN London Subdomain v1.0.0 Alpha is the repository operating manual for `london.cgnnews.net`.
+CGN London Subdomain v1.1.0 Alpha is the repository operating manual for `london.cgnnews.net`.
 
 Plain-English explanation: this repository serves the public CGN News subdomain for London & Europe. It presents approved CGN News branding, public page content, contact/navigation pathways, and static assets for the subdomain.
 
@@ -58,8 +58,8 @@ Technical explanation: this repository is a GitHub Pages-hosted static site. It 
 | Repository | `CookInternational/CGN-London` |
 | Production site | `https://london.cgnnews.net` |
 | Production domain | `london.cgnnews.net` |
-| Subdomain version | `CGN LONDON SUBDOMAIN v1.0.0 Alpha` |
-| Subdomain slug | `cgn-london-subdomain-v1.0.0-alpha` |
+| Subdomain version | `CGN LONDON SUBDOMAIN v1.1.0 Alpha` |
+| Subdomain slug | `cgn-london-subdomain-v1.1.0-alpha` |
 | Build stamp | `2026-06-23T05:00:49Z` |
 | README updated | `23 June 2026 • 05:00:49Z UTC` |
 | Subdomain type | `International bureau-team subdomain` |
@@ -207,7 +207,7 @@ Locked rules:
 
 The build is acceptable when:
 
-- README shows `CGN London Subdomain v1.0.0 Alpha` as the current subdomain build.
+- README shows `CGN London Subdomain v1.1.0 Alpha` as the current subdomain build.
 - README updated timestamp is `23 June 2026 • 05:00:49Z UTC`.
 - Build stamp matches `2026-06-23T05:00:49Z`.
 - Repository is `CookInternational/CGN-London`.
@@ -225,7 +225,7 @@ The build is acceptable when:
 
 ---
 
-## 11. File Inventory for v1.0.0 Alpha
+## 11. File Inventory for v1.1.0 Alpha
 
 | File or directory | Status |
 |---|---|
@@ -284,6 +284,6 @@ Check `sitemap.xml`, `robots.txt`, page metadata, and the GitHub Pages deploymen
 
 ---
 
-Last Updated on 23 June 2026 • 05:00:49Z UTC | Developed by Cook Technology Services  
+Last Updated on 25 June 2026 • 19:50:00Z UTC | Developed by Cook Technology Services  
 Copyright © 2026 | CGN News/Cook Global News Network. All Rights Reserved.  
-End of README - CGN London Subdomain v1.0.0 Alpha
+End of README - CGN London Subdomain v1.1.0 Alpha
